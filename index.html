@@ -40,6 +40,7 @@
 }
 
 .cat_div {
+  
     display:flow-root;
     justify-content: center;
     align-items: center;
@@ -63,12 +64,12 @@
 
 .button {
     font-family: 'Comic Sans MS';
-
+    cursor: pointer;
     width: 35%;
     left: 25%;
     position: relative;
 }
-	
+
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -86,7 +87,7 @@
       .eq('id', 1)
       .single();
     if (error) console.error(error);
-    else document.getElementById('counterDisplay').innerText = `Bob alredy has ${data.count} Birthday messages`;
+    else document.getElementById('counterDisplay').innerText = `Bob already has ${data.count} Birthday messages`;
   }
 
   async function incrementCounter() {
@@ -94,9 +95,14 @@
     if (error) console.error(error);
   }
 
-  document.getElementById('button').addEventListener('click', async () => {
+  const button = document.getElementById('button')
+  
+  button.addEventListener('click', async () => {
+    button.setAttribute("disabled","");
+    button.innerText = "Bob thanks a lot!";
     await incrementCounter();
     getCounter();
+
   });
 
   getCounter();
