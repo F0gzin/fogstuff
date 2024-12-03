@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad Cat</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+</head>
+
+<body>
+    <div class="cat_div">
+    	<img class="image" src="CatBirthday.jpg" alt="CatBirthday"></img>
+
+        <div class="text">
+            This is Bob. Bob has no friends, so nobody came to Bob's birthday
+        </div>
+        
+        <button id="button" class="button">Say "Happy birthday, Bob!"</button>
+        
+        <p id="counterDisplay" class="text">Loading...</p>
+
+    </div>
+</body>
+
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+    overflow-y: auto;
+    font-family: 'Comic Sans MS', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    white-space: pre-line"
+}
+
+.cat_div {
+    display:flow-root;
+    justify-content: center;
+    align-items: center;
+    
+    width:50%;
+    height:50%;
+    position: relative;
+}
+
+.image {
+    position: relative;
+    left: 30%;
+    height: 60%;
+}
+
+.text {
+    width: 50%;
+    left: 20%;
+    position: relative;
+}
+
+.button {
+    font-family: 'Comic Sans MS';
+
+    width: 35%;
+    left: 25%;
+    position: relative;
+}
+	
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+
+<script>
+    const supabaseUrl = 'https://alanmhkrbsfltymmovel.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsYW5taGtyYnNmbHR5bW1vdmVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMxODU2MjMsImV4cCI6MjA0ODc2MTYyM30.pRf2uzEGHPIrzyf6ocHuOcy-mDy9cb-e8i4OPE0gc0M';
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+  async function getCounter() {
+    const { data, error } = await supabase
+      .from('counter')
+      .select('count')
+      .eq('id', 1)
+      .single();
+    if (error) console.error(error);
+    else document.getElementById('counterDisplay').innerText = `Bob alredy has ${data.count} Birthday messages`;
+  }
+
+  async function incrementCounter() {
+    const { error } = await supabase.rpc('increment_count', { row_id: 1 });
+    if (error) console.error(error);
+  }
+
+  document.getElementById('button').addEventListener('click', async () => {
+    await incrementCounter();
+    getCounter();
+  });
+
+  getCounter();
+
+</script>
+
+</html>
