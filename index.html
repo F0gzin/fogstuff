@@ -5,69 +5,128 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sad Cat</title>
+    <title>Bob's Birthday</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 </head>
 
 <body>
-    <div class="cat_div">
-    	<img class="image" src="CatBirthday.jpg" alt="CatBirthday"></img>
+  <audio id="tada" src="tada.mp3"></audio>
 
-        <div class="text">
-            This is Bob. Bob has no friends, so nobody came to Bob's birthday
-        </div>
-        
-        <button id="button" class="button">Say "Happy birthday, Bob!"</button>
-        
-        <p id="counterDisplay" class="text">Loading...</p>
+  <div class = "main_div">
+    <h3 class="title">Bob's Birthday</h3>
+    <p class="text">This is Bob. Bob has no friends, so nobody came to his birthday.</p>
+    <img class="image" src="CatBirthday.jpg" alt="CatBirthday"></img>
 
+    <p class="text_to_end"><img class="bar" src="bar.png"></p>
+
+    <div class="text">
+     <p>Unfortunately, the clock is ticking.</p>
+     <p>The hours are going by. The past increases, the future recedes. Possibilities decreasing, regrets mounting.</p>
+     <p>Do you understand?</p>
     </div>
+
+    <button id="button_1" class="button_">I Understand</button>
+    <button id="button_2" class="button_">Remain ignorant</button>  
+
+    <p class="text_to_end"><img class="bar" src="bar.png"></p>
+
+    <div class="birthday_tab" id="birthday_tab">
+      <button id="button" class="button">Happy birthday, Bob!</button> 
+      <p id="counterDisplay" class="text2">Loading...</p>
+    </div>
+  </div>
+
 </body>
 
 <style>
     body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     height: 100vh;
     margin: 0;
-    background-color: #ffffff;
+    overflow-x: hidden;
+    background: fixed;
+    background-color: #c0c0c0ef;
     overflow-y: auto;
     font-family: 'Comic Sans MS', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     white-space: pre-line"
 }
 
-.cat_div {
-  
-    display:flow-root;
+.main_div {
+    display: block;
     justify-content: center;
     align-items: center;
-    
-    width:50%;
-    height:50%;
+    background-color: #c0c0c0af;
+    top: 0%;
+    width:80%;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
 }
 
 .image {
     position: relative;
-    left: 30%;
-    height: 60%;
+    left: 35%;
+    height: 50%;
 }
 
 .text {
+    color: black;
     width: 50%;
-    left: 20%;
+    left: 25%;
+    position: relative;
+}
+
+.text_to_end {
+    color: black;
+    width: 100%;
+    height: 20px;
+    left: 25%;
+    position: relative;
+}
+
+.text2 {
+    color: black;
+    width: 50%;
+    left: 30%;
     position: relative;
 }
 
 .button {
+    background-color: #c0c0c0;
     font-family: 'Comic Sans MS';
     cursor: pointer;
-    width: 35%;
-    left: 25%;
+
+    background-image: url("confetti.gif");
+    background-size: 100%;
+    background-repeat: repeat;
+
+    left: 38%;
     position: relative;
+}
+
+.button_ {
+    background-color: #c0c0c0;
+    font-family: 'Comic Sans MS';
+    cursor: pointer;
+
+    left: 34%;
+    position: relative;
+}
+
+.bar {
+  width: 50%;
+  height: 10px;
+
+}
+
+.title {
+  margin-left: 40%;
+
 }
 
 </style>
@@ -76,7 +135,7 @@
 
 
 <script>
-    const supabaseUrl = 'https://alanmhkrbsfltymmovel.supabase.co';
+  const supabaseUrl = 'https://alanmhkrbsfltymmovel.supabase.co';
   const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsYW5taGtyYnNmbHR5bW1vdmVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMxODU2MjMsImV4cCI6MjA0ODc2MTYyM30.pRf2uzEGHPIrzyf6ocHuOcy-mDy9cb-e8i4OPE0gc0M';
   const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
@@ -95,9 +154,15 @@
     if (error) console.error(error);
   }
 
-  const button = document.getElementById('button')
-  
+  const button = document.getElementById('button');
+  const tada = document.getElementById("tada");
+
   button.addEventListener('click', async () => {
+    tada.play()
+
+    button.style.backgroundImage = 'url()';
+    document.body.style.backgroundImage = 'url("confetti.gif")'; 
+
     button.setAttribute("disabled","");
     button.innerText = "Bob thanks a lot!";
     await incrementCounter();
@@ -106,6 +171,21 @@
   });
 
   getCounter();
+
+  const tab = document.getElementById('birthday_tab');
+
+  tab.style.visibility = 'hidden';
+
+  const button_1 = document.getElementById('button_1');
+  const button_2 = document.getElementById('button_2');
+
+  button_1.addEventListener('click', async () => {
+    tab.style.visibility = 'visible';
+  });
+
+  button_2.addEventListener('click', async () => {
+    tab.style.visibility = 'visible';
+  });
 
 </script>
 
