@@ -1,0 +1,103 @@
+body {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2977db;
+    background: linear-gradient(0deg, rgba(9,23,120,1) 0%, rgba(108,108,233,1) 56%, rgba(0,212,255,1) 100%);;
+    background-size: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family: 'Comic Sans MS', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    white-space: pre-line"
+}
+
+.textversion {
+    color: #f0f0f0;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+}
+
+.scoretext {
+    color: #f0f0f0;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+}
+
+.middle {
+    position: relative;
+}
+
+.fish_entity {
+    transform: scale(1,1);;
+    transition: transform 0.2s ease;
+    width: 4%;
+    height: 4%;
+    align-self: center;
+    position: fixed;
+    cursor: pointer;
+    left: 43%;
+    top: 40%;
+}
+
+.lights {
+    overflow-x: hidden;
+    position: absolute;
+    right: 100%;
+    height: 1%;
+}
+
+.lights_image {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    align-self: normal;
+}
+
+.hunger_bar_bg {
+    position: absolute;
+    top: 10%;
+    width: 200px;
+    height: 20px;
+    color: #f0f0f0;
+    background-color: rgb(204, 204, 204);
+    border-color: black;
+    border-style: ridge;
+   /* border-radius: 4px; */
+}
+
+.hunger_bar {
+    position: absolute;
+    top: 0%;
+    width: 100px;
+    height: 20px;
+    background-color: rgb(240, 127, 35);
+   /* border-radius: 4px;*/
+}
+
+.feed_fish {
+    background-color: rgb(40, 157, 224);
+    border-radius: 10px;
+    border-style:solid;
+    color: #f0f0f0;
+    font-family: 'Comic Sans MS';
+    position: absolute;
+    align-self: center;
+    align-content: center;
+    left: 45%;
+    top: 90%;
+    cursor: pointer;
+}
+
+.feed_fish:active{
+    background-color:  rgb(21, 86, 124);
+    color: #000000;
+}
+
+.feed_fish:disabled{
+    background-color:  rgb(21, 86, 124);
+    color: #000000;
+}

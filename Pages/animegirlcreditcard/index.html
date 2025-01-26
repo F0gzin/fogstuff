@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Senpai ^-^</title>
+</head>
+
+<body>
+    <div class="main_div" id="main_div">
+        <p id="main_text">Hello senpai, may i have you credit card info?</p>
+        <img src="Fuwa Hyouka.jpg" alt="Fuwa Hyouka">
+        <p></p>
+        <input id="input">
+        <p></p>
+        <button id="send_button" class="send_button">Send!</button>
+    </div>
+</body>
+
+<style>
+    body{
+    display:grid;
+    justify-content: normal;
+    align-items: normal;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3a1fa;
+    background-size: 10px;
+    background-repeat: repeat;
+    overflow-y: scroll;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .main_div {
+        width: 100%;
+        height: 100%;
+    }
+
+    .send_button{
+        width: 250px;
+        background-color: darkslateblue;
+        color: antiquewhite;
+    }
+</style>
+
+
+<script>
+
+console.log("Hello World!")
+
+var button = document.getElementById("send_button")
+var input = document.getElementById("input")
+var main_text = document.getElementById("main_text")
+
+button.addEventListener('click', self => {
+    console.log(input.value)
+    input.value = "Sucessfull send data"
+    main_text.textContent = "Thank you senpai :)"
+})
+
+</script>
+
+</html>
