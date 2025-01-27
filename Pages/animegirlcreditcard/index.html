@@ -13,7 +13,7 @@
     <div class="main_div" id="main_div">
         <a href="../../index.html">⬅Back</a>
         <p id="main_text">Hello senpai, may i have you credit card info?</p>
-        <img id="img" src="Fuwa Hyouka.jpg" alt="Fuwa Hyouka">
+        <img id="img" class="img" src="Waifus/Fuwa Hyouka.jpg" alt="Fuwa Hyouka">
         <p></p>
         <input id="input">
         <p></p>
@@ -45,6 +45,10 @@
         background-color: darkslateblue;
         color: antiquewhite;
     }
+    
+    .img{
+        width: 200px;
+    }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -64,6 +68,14 @@ const supabaseUrl = 'https://alanmhkrbsfltymmovel.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsYW5taGtyYnNmbHR5bW1vdmVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMxODU2MjMsImV4cCI6MjA0ODc2MTYyM30.pRf2uzEGHPIrzyf6ocHuOcy-mDy9cb-e8i4OPE0gc0M';
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
+const waifu_count = 31
+
+const choosen_waifu = Math.round(Math.random()*(waifu_count-1))+1
+
+console.log(choosen_waifu)
+
+img.src = `Waifus/${choosen_waifu}.jpg`
+
 async function getCounter() {
     const { data, error } = await supabase
       .from('randomdata')
@@ -79,15 +91,21 @@ async function getCounter() {
     if (error) console.error(error);
   }
 
+let alredySend = false
+
 button.addEventListener('click', self => {
+    alredySend = true
+
+    if(!alredySend){
     console.log(input.value)
     addToCounter(input.value)
     input.value = "Sucessfull send data"
     main_text.textContent = "Thank you senpai :)"
     input.disabled = true
     audio_tada.play()
-    img.src = "checking.jpg"
-
+//    img.src = "checking.jpg"
+    
+    }
 
 })
 
