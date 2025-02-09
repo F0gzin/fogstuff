@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goldfish</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+</head>
+
+<style> </style>
+
+<body>
+    <div class="scoretext" id="score_text">Bubbles: 0</div>
+
+    <div class="middle">
+        <div class="fish_entity" id="fish_entity"> <img src="assets/images/goldfish/fish.gif"> </div>
+    </div>
+
+    <div class="lights">
+        <img class="lights_image" src="assets/images/light.png">
+
+    </div>
+
+    <div class="ui_left">
+        <div id="hunger_bar_bg" class="hunger_bar_bg" value="25" max="100">
+            <p id="hunger_text">Hunger</p>
+            <div class="hunger_bar" id="hunger_bar"></div>
+        </div>
+
+    </div>
+
+    <button id="feed_button" class="feed_fish">Feed Fish $10</button>
+
+</body>
+
+<script src="assets/scripts/main.js"></script>
+
+</html>
