@@ -17,7 +17,7 @@
     </div>
 
     <img class="bar" src="Assets/Images/General/bar.png">
-    <div class="items_top_bar"><a href="">🎮Games</a> | <a href="About/">📑About</a></div>
+    <p><a href="">Games</a> | <a href="About/">About</a></p>
     <img class="bar" src="Assets/Images/General/bar.png">
 
     <div class="pages_div">
@@ -25,26 +25,9 @@
             <img class="link_thumbnail" src="Assets/Images/Thumbnails/FanClicker.png" alt="Fan">
             <p class="title_thumbnail">Fan Clicker</p>
         </a>
-        
-        <a href="Games/frog/" class="link_game">
-            <img class="link_thumbnail" src="Assets/Images/Thumbnails/FrogGame.png" alt="FrogGame">
-            <p class="title_thumbnail">The Impossible Frog Game!</p>
-        </a>
-
-        <a href="https://www.roblox.com/games/131439494777745/Ducks-Army-PRE-ALPHA" class="link_game">
-            <img class="link_thumbnail" src="Assets/Images/Thumbnails/DucksArmy.png" alt="Ducks Army">
-            <p class="title_thumbnail">🦆 Ducks Army [Roblox]</p>
-        </a>
-
-        <a href="https://www.roblox.com/games/75691964665725/Fogs-Admin" class="link_game">
-            <img class="link_thumbnail" src="Assets/Images/Thumbnails/FogsAdmin.png" alt="Fog's Admin">
-            <p class="title_thumbnail">Fog's Admin [Roblox]</p>
-        </a>
-
-        <a href="Games/eaglercraft/1.8.html" class="link_game">
-            <img class="link_thumbnail" src="Assets/Images/Thumbnails/eaglercraft.png" alt="Budi">
-            <p class="title_thumbnail">Eaglercraft [1.8]</p>
-        </a>
+        <div class="thumbnail_div_"> <a class="thumbnail" href="Games/fan_clicker/"><img class="thumbnail_image" src="Assets/Images/Thumbnails/FanClicker.png" alt="Fan">Fan Clicker</a></div>
+        <div class="thumbnail_div_"> <a class="thumbnail" href="Games/frog/"><img class="thumbnail_image" src="Assets/Images/Thumbnails/FrogGame.png" alt="Impossible Frog Game">Impossible Frog Game</a></div>
+       
     </div>
 
 
@@ -142,7 +125,7 @@ white-space: pre-line"
 }
 
 .pages_div::-webkit-scrollbar-thumb {
-    background-image: url(Assets/Images/General/95largedown.png);
+    background-image: url(Assets/General/95largedown.png);
     background-size: 100%;
     background-size: cover;
  /*   border-radius: 10px;
@@ -162,39 +145,12 @@ white-space: pre-line"
 
 .link_game {
     width: 200px;
-    height: 230px;
+    height: auto;
     display: block;
-    margin-left: 10px;
     border: black;
     border-style:solid;
     border-radius: 10px;
     border-color: black;
-}
-
-.link_thumbnail {
-    align-self: center;
-    width: 195px;
-    height: auto;
-    border: black;
-    border-style:solid;
-    border-radius: 2px;
-    }
-
-.title_thumbnail {
-
-    position: relative;
-   /* background-color: #000000; */
-    color: aliceblue;
-    text-align: center;
-    top: -10px;
-}
-
-.items_top_bar {
-    align-content: center;
-    align-items: center;
-    position: relative;
-    height: 20px;
-    padding-left: 42.5%;
 }
 
 </style>
