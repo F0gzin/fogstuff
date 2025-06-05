@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit-Coin miner!</title>
+    <link rel="icon" href="Assets/Sprites/BitCoinIcon/bitcoin.png">
+</head>
+
+<body>
+    <div class="title_1_div">
+        <img class="icon_logo_title_1" src="Assets/Sprites/BitCoinIcon/bitcoin.png">
+        <h3 class="title_1"> Bitcoin Miner! </h3>
+    </div>
+    
+    <div>
+        <button class="mine_button" id="mine_button">Start Mining</button>
+    </div>
+
+</body>
+
+<style>
+    body{
+    display: block;
+    justify-content: normal;
+    align-items: normal;
+    background-color: #414141;
+    background-size: 10px;
+    background-repeat: repeat;
+    overflow-y: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .title_1_div{
+        display: flex;
+        justify-content: normal;
+        align-items: normal;
+        margin: 0px;
+        left: 0px;
+        top: 0px;
+        height: 50px;
+        width: 100%;
+        background-color: #2e2e2e;
+        color: aliceblue;
+    }
+
+    .title_1{
+        position: absolute;
+        top: -6px;
+        left: 69px;
+        width: 90%;
+        height: 6%;
+
+        font-family:'Courier New', Courier, monospace;
+        color: aliceblue;
+    }
+
+    .icon_logo_title_1 {
+        position: relative;
+        height: 100%;
+    }
+
+    .mine_button {
+        position: fixed;
+        background-color: #2e2e2e;
+        color: aliceblue;
+        cursor: pointer;
+        align-self: center;
+        left: 50%;
+    }
+
+</style>
+
+<script>
+
+let its_mining = false
+const mine_button = document.getElementById("mine_button")
+
+mine_button.addEventListener('click', self => {
+    its_mining = (!its_mining) 
+    console.log(its_mining)
+
+    if(its_mining){
+        mine_button.textContent = "Stop Mining..."
+    }else{
+        mine_button.textContent = "Start Mining"
+    }
+})
+
+</script>
+
+</html>
