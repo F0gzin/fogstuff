@@ -1,0 +1,413 @@
+<main>
+    <div class="main_div">
+        <div class="top_area">
+            <a href="https://f0gzin.github.io/fogstuff/">
+                <img id="svg_top_logo" src="../../Assets/Logo/White.svg" alt="FogStuff logo">
+            </a>
+            <div style="display: inline;">
+                    <p><marquee scrollamount="22"><span>Cool unblocked web-games to waste time in school's computer lab instead of doing work..</span></marquee></p>
+            </div>
+            <div style="display: flex;">
+                <button class="selectable_tab_button">🎮Web Games</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">🌐Links</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">📃About</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">📥Downloads</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">👾Emulators</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">🎭Proxys</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">💬Chatrooms</button>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button">🔨Create</button>
+                <div style="width: 5px;"></div> 
+                <button class="selectable_tab_button">🤖AI's</button>
+                <div style="width: 5px;"></div> 
+                <button class="selectable_tab_button">🧪Experiments and tests</button>
+            </div>
+        </div>
+        <div id="ads">
+            <div id="left_ad_area">
+                <a href="../../Errors/AdNotFound/">
+                    <img class="ad_img" alt="ADVERTISEMENT" src="../../Assets/Images/Ads/AD_guloso_1.png">
+                </a>
+            </div>
+            <div id="right_ad_area">
+                <a href="https://www.youtube.com/watch?v=OIVLKm3ljEw&pp=ygUKc2lnZW9uIHBleA%3D%3D">
+                    <img class="ad_img" alt="ADVERTISEMENT" src="../../Assets/Images/Ads/GoonParty.png">
+                </a>
+            </div>
+        </div>
+        <div id="large_main_games_area">
+            
+            <div id="game_area_main_center">
+                <div id="game_area">
+                    <div id="game_top_toolbar">
+                        <div id="game_title"> !_GAMENAME </div>
+                    </div>
+                    <div id="game_frame_container">
+                        !_GAME_IFRAME_CONTENT
+                    </div>
+                    <div id="game_bottom_toolbar">
+                        <span>
+                            <button title="Maximize" id="maximize_button">
+                                <img src="../../Assets/Images/Icons/maximize_x24.png">
+                            </button>
+                            <button title="Share" id="share_button">
+                                <img src="../../Assets/Images/Icons/share_x24.png">
+                            </button>
+                            <a href="./About">
+                                <button title="About" id="help_about_game_button">
+                                    <img src="../../Assets/Images/Icons/question_mark_x24.png">
+                                </button>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <hr style="width: 50%;">
+        <div id="comment_section_area">
+            <span><strong>Comments:</strong></span>
+            <div id="post_comment_area">
+                <input class="post_comment_input" type="text">
+                <button class="post_comment_button"><span>»</span></button>
+            </div>
+            <div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<style>
+    body{
+        display: block;
+        justify-content: normal;
+        align-content: normal;
+        height: 100%;
+        margin: 0;
+        background-color: #07032c;
+        background-size: 10px;
+        background-repeat: repeat;
+        overflow-y: scroll;
+        font-size:medium;
+        color: #ffffff;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .post_comment_input{
+        width: calc(100% - 40px);
+        background-color: #08061a;
+        outline-style: solid;
+        outline-width: 1px;
+        color: white;
+        outline-color: #d5dde7;
+        font-style: normal;
+        font-size: medium;
+        font-weight: 100;
+        font-family: Comic Sans MS, Cursive, Arial, Verdana, Frutiger, system-ui, sans-serif, open-sans;
+    }
+
+    .post_comment_button{
+        background-color: #07032c;
+        outline-style: solid;
+        outline-width: 1px;
+        color: white;
+        outline-color: #d5dde7;
+        font-style: normal;
+        font-size: medium;
+    }
+
+    #game_iframe{
+        width: 100%;
+        height: 100%;
+    }
+
+    #EmbededGameFrame{
+        width: 100%;
+        height: 100%;
+    }
+
+    #post_comment_area{
+        width: 100%;
+        display: flexbox;
+        
+    }
+
+    .comment_reply_div{
+        display: flex;
+    }
+
+    .comment_reply_arrow_img{
+        position: relative;
+        height: 40px;
+        width: 40px;
+
+    }
+    
+    .comment_replies_div{
+        position: relative;
+        margin-top: 50px;
+        width: auto;
+        margin-left: 4px;
+    }
+    
+    .comment_reply_content{
+        width: 100%;
+        position: relative;
+        display: inline-block;
+        margin-left: 1px;
+    }
+
+    .comment_pfp_container_x24{
+        display: inline-block;
+        position: inherit;
+        width: 24px;
+        height: 24px;
+        background-color: #ffffff;
+    }
+    
+    .comment_pfp_container_x24 img{
+        position: relative;
+        display: inline;
+        width: 24px;
+        height: 24px;
+    }
+
+    .comment_text_final{
+        font-style: normal;
+        font-size: medium;
+        font-weight: 100;
+        font-family: Comic Sans MS, Cursive, Arial, Verdana, Frutiger, system-ui, sans-serif, open-sans;
+        margin-left: 10px;
+    }
+
+    .comment_profile_div{
+        display: inline;
+        width: 100%;
+    }
+    
+    .comment_reactions_sec{
+        position:absolute;
+        width: 100%;
+        height: 28px;
+        bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .comment_reactions_sec button{
+        background-color: #07032c;
+        color: white;
+        height: 24px;
+        position:relative;
+        margin-bottom: 2px;
+        bottom: 4px;
+        outline-style: solid;
+        outline-width: 1px;
+        outline-color: #1a1075;
+    }
+
+    .comment_reactions_sec img{
+        position: relative;
+        margin-top: 2px;
+        width: 16px;
+        height: 16px;
+    }
+
+    #comment_section_area{
+        position: relative;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .comment{
+        display: block;
+        align-content: normal;
+        width: 100%;
+        height: 100px;
+        background-color: #07032c;
+        margin-top: 10px;
+        outline-style: solid;
+        outline-width: 1px;
+        outline-color: #ffffff;
+    }
+
+    .comment_reply_button{
+        position:relative;
+        display: inline-block;
+        justify-content: center;
+        align-content: center;
+        height: 24px;
+        padding-top: 7px;
+    }
+
+    .comment_reply_button span{
+        position: relative;
+        display: inline-block;
+        bottom: 4px;
+    }
+
+    .comment_profile_content{
+        display: inline-flex;
+        align-content: center;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #left_ad_area{
+        float: left;
+        width: 340px;
+        height: 785px;
+        margin: 20px;
+    }
+
+    #right_ad_area{
+        float: right;
+        width: 340px;
+        height: 785px;
+        margin: 20px;
+    }
+
+    .ad_img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    button{
+        cursor: pointer;
+        background-color: #11095c;
+    }
+
+    #svg_top_logo{
+        width: 200px;
+    }
+
+    #game_area{
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 97%;
+        height: 750px;
+        outline-style: solid;
+        outline-width: 1px;
+        outline-color: #ffffff;
+    }
+
+    #game_area_main_center{
+        display: flex;
+        width: auto;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #game_top_toolbar{
+        background-color: #050316;
+        width: 100%;
+        position: relative;
+    }
+    
+    #game_bottom_toolbar{
+        background-color: #050316;
+        width: 100%;
+        position: relative;
+    }
+
+    #game_title{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        font-size: larger;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #game_frame_container{
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1000;
+        height: calc(100% - 60px);
+    }
+
+    .game_card_area_div{
+        border-radius: 5px;
+        display: flex;
+        width: 50%;
+        height: 140px;
+        padding-top: 10px;
+    }
+    
+    .top_area{
+        background-color: #08061a;
+    }
+
+    .game_card_icon_img{
+        background-color: #ffffff;
+        height: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+    }
+
+    .game_card_description_div{
+        display: block;
+    }
+
+    .game_card_description_text{
+        padding-top: 10px;
+        font-size: small;
+        height: calc(100% - 70px);
+    }
+
+    .game_card_description_title{
+        font-size: large;
+    }
+
+    .game_card_play_button{
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(56, 157, 252);
+        color: white;
+        width: 120px;
+        position: relative;
+        left: 0px;
+        bottom: 0px;
+        font-family:cursive;
+        font-size: large;
+    }
+
+    .game_card_icon_image_area{
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width:140px;
+    }
+
+    #main_games_scrolling_area{
+        display: grid;
+    }
+
+    .selectable_tab_button{
+        border-radius: 10px;
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: rgb(56, 157, 252);
+        color: white;
+        height: 25px;
+        font-weight: bold;
+    }
+
+</style>
