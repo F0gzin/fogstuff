@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,27 +31,57 @@
             <div style="display: flex;">
                 <button class="selectable_tab_button" style="background-color: lime; color: black;">🎮Web Games</button>
                 <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">🌐Links</button>
+                <a href="./Links"><button class="selectable_tab_button">🌐Links</button></a>
                 <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">📃About</button>
+                <a href="./About"><button class="selectable_tab_button">📃About</button></a>
                 <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">📥Downloadable Games</button>
+                <a href="./Downloads"><button class="selectable_tab_button">📥Downloadable Games</button></a>
                 <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">👾Emulators</button>
+                <a href="./Emulators"><button class="selectable_tab_button">👾Emulators</button></a>
                 <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">🎭Proxys</button>
+                <a href="./Proxys"><button class="selectable_tab_button">🎭Proxys</button></a>
                 <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">💬Chatrooms</button>
+                <a href="./Chatrooms"><button class="selectable_tab_button">💬Chatrooms</button></a>
                 <div style="width: 5px;"></div> 
-                <button class="selectable_tab_button">🔨Create</button>
+                <a href="./Create"><button class="selectable_tab_button">🔨Create</button></a>
                 <div style="width: 5px;"></div> 
-                <button class="selectable_tab_button">🧪Experiments and tests</button>
+                <a href="./Experiments"><button class="selectable_tab_button">🧪Experiments and tests</button></a>
             </div>
         </div>
-        <div id="large_main_games_area">
-            <div id="main_search_area"></div>
-            <div id="main_games_scrolling_area">
+        <div class="center_area">
+            <div id="left_ad_area">
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/AdTemplate.png">
+                </a>
+            </div>
+            <div id="right_ad_area">
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/AdTemplate.png">
+                </a>
+            </div>
+            <div id="large_main_games_area">
+                <div id="main_search_area"></div>
+                <div id="main_games_scrolling_area">
 
+                </div>
             </div>
         </div>
     </div>
@@ -63,7 +94,7 @@ const scrollingArea = document.getElementById("main_games_scrolling_area");
 const gameList = [{
     "id":"Eaglercraft",
     "display_name":"Minecraft <small>(Eaglercraft)</small>",
-    "description":`Good old Minecraft ported to JS by <a href="https://github.com/lax1dude">Lax1dude</a>.<br>Supports version beta 1.5, 1.8 and 1.12.2<br>Only 1.8 supports multiplayer.<br>The original game can also be <strong>downloaded</strong> <a href="https://www.minecraft.net/pt-br">here</a>`,
+    "description":`Good old Minecraft ported to JS by <a href="https://github.com/lax1dude">Lax1dude</a>.<br>Supports version 1.5.2, 1.8 and 1.12.2<br>Only 1.8 and 1.5.2 supports multiplayer.<br>The original game can also be <strong>downloaded</strong> <a href="https://www.minecraft.net/pt-br">here</a>`,
 },
 {
     "id":"FanClicker",
@@ -76,19 +107,61 @@ const gameList = [{
     "description":`Frog Game is a rage-game platformer where you control a tiny little froggy<br><b>Supports local multiplayer!</b><br>Can you speedrun it?<br>The original game can be <strong>played</strong> <a href="https://www.construct.net/en/free-online-games/impossible-frog-game-63816/play">here</a>`
 },
 {
-    "id":"PetsFight",
+    "id":"Doom",
+    "display_name":"Doom [Emulated]",
+    "description":"Classic Doom emulated with JS-Box 🔥",
+    "disabled":false
+},
+{
+    "id":"PetsFightRemake",
     "display_name":"Pets Fight [Remake]",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
     "disabled":true
 },
 {
+    "id":"CS1.6",
+    "display_name":"Counter Strike 1.6",
+    "description":"CS 1.6 ported to browser! Original port <a href=\"https://play-cs.com/pt/servers\">here</a>",
+    "disabled":false
+},
+{
+    "id":"GenericRoleplayGame",
+    "display_name":"Generic Roleplay Game",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>Farm crops, chop wood, and contribute to the town economy!<br>Become a guard, maybe a doctor, or a president!<br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/4598019433/generic-roleplay-gaem\">here</a>",
+    "disabled":true
+},
+{
+    "id":"FogsAdmin",
+    "display_name":"Fog's Admin",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/75691964665725/Fogs-Admin\">here</a>",
+    "disabled":true
+},
+{
+    "id":"YouVsHomer",
+    "display_name":"You VS Homer",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/111530421351096/You-VS-Homer\">here</a>",
+    "disabled":true
+},
+{
+    "id":"DDLC",
+    "display_name":"Doki Doki Literature Club!",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a>",
+    "disabled":true
+},
+{
     "id":"PetsFightClassic",
     "display_name":"Pets Fight [Classic]",
-    "description":`placeholder`
+    "description":`Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!`
 },
 {
     "id":"SkebobClicker",
     "display_name":"Skebob Clicker",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"PVZ",
+    "display_name":"Plants VS Zombies 1",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
     "disabled":true
 },
@@ -137,7 +210,7 @@ const gameList = [{
 for(i=0;i<gameList.length;i++){
     const gameData = gameList[i];
     let newDocData = `
-<div class="game_card_area_div">
+<div class="game_card_area_child">
     <div class="game_card_icon_image_area">
         <img class="game_card_icon_img" src="Assets/GameImages/${gameData.id}/icon.png">
         </div>
@@ -155,8 +228,19 @@ for(i=0;i<gameList.length;i++){
 
     let node = document.createElement("div");
     scrollingArea.appendChild(node);
+    node.className = "game_card_area";
     node.innerHTML = newDocData;
 }
+
+
+let val = Math.floor(Math.random()*5);
+
+setTimeout(() => {
+    const adsImgs = document.getElementsByClassName("ad_img");
+    for(let i=0;i<adsImgs.length;i++){
+        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%5}.png`;
+    }
+}, 100);
 
 </script>
 
@@ -165,7 +249,7 @@ for(i=0;i<gameList.length;i++){
     display: block;
     justify-content: normal;
     align-content: normal;
-    height: 100%;
+    height:max-content;
     margin: 0;
     background-color: #07032c;
     background-size: 10px;
@@ -174,6 +258,54 @@ for(i=0;i<gameList.length;i++){
     font-size:medium;
     color: #ffffff;
     font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .main_div{
+        height: max-content;
+    }
+
+    .ad_a{
+        display: block;
+        height: max-content;
+        margin-top: 10px;
+    }
+
+    .center_area{
+        width: 100%;
+        height: fit-content;
+        display: inline-flex;
+    }
+    
+    #left_ad_area{
+        position: absolute;
+        width: 250px;
+        height: fit-content;
+    }
+
+    .game_card_area{
+        height: 180px;
+    }
+
+    #right_ad_area{
+        position: absolute;
+        right: 0px;
+        width: 250px;
+        height: max-content;
+    }
+
+    #large_main_games_area{
+        display: block;
+        width: 800px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ad_img{
+        top: 0px;
+        display: block;
+        width: 250px;
+        height: 600px;
     }
 
     button{
@@ -187,11 +319,19 @@ for(i=0;i<gameList.length;i++){
     .game_card_area_div{
         border-radius: 5px;
         display: flex;
-        width: 50%;
+        width: 100%;
         height: 140px;
         padding-top: 10px;
     }
     
+    .game_card_area_child{
+        border-radius: 5px;
+        display: flex;
+        width: 100%;
+        height: 140px;
+    }
+    
+
     .top_area{
         background-color: #08061a;
     }
@@ -239,7 +379,13 @@ for(i=0;i<gameList.length;i++){
     }
 
     #main_games_scrolling_area{
-        display: grid;
+        background-color: #0d0744;
+        width: 800px;
+        height: 100%;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;       
+        z-index: 10; 
     }
 
     .selectable_tab_button{

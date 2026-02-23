@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="icon" href="Assets/google_favicon.ico">
+    <meta name="description" content="Web games, hopefully unblocked 👍">
+</head>
+
+<body>
+    <noscript style="z-index: 1000; width: 100%; height: 100%; position: fixed; background-color: #07032c;">
+        <center>
+            <h1>⚠️ - Please enable JavaScript to proceed. - ⚠️</h1>
+            <p>
+                In Chrome, open settings, go to Security --&gt; JavaScript --&gt; click on Allow JavaScript
+            </p>
+        </center>
+    </noscript>
+    
+    <div class="main_div">
+        <div class="top_area">
+            <a href="https://f0gzin.github.io/fogstuff/">
+                <img id="svg_top_logo" src="../Assets/Logo/White.svg" alt="FogStuff logo">
+            </a>
+            <div style="display: inline;">
+                <!--<img style="display: inline; image-rendering: pixelated; float: right;" src="./Assets/Gifs/under construction.gif">-->
+                <p><marquee scrollamount="22"><span>Cool unblocked web-games to waste time in school's computer lab instead of doing work..</span></marquee></p>
+            </div>
+            <div style="display: flex;">
+                <a href="../"><button class="selectable_tab_button">🎮Web Games</button></a>
+                <div style="width: 5px;"></div>
+                <a href="../Links"><button class="selectable_tab_button">🌐Links</button></a>
+                <div style="width: 5px;"></div>
+                <a href="../About"><button class="selectable_tab_button">📃About</button></a>
+                <div style="width: 5px;"></div>
+                <a href="../Downloads"><button class="selectable_tab_button">📥Downloadable Games</button></a>
+                <div style="width: 5px;"></div>
+                <button class="selectable_tab_button" style="background-color: lime; color: black;">👾Emulators</button>
+                <div style="width: 5px;"></div>
+                <a href="../Proxys"><button class="selectable_tab_button">🎭Proxys</button></a>
+                <div style="width: 5px;"></div>
+                <a href="../Chatrooms"><button class="selectable_tab_button">💬Chatrooms</button></a>
+                <div style="width: 5px;"></div> 
+                <a href="../Create"><button class="selectable_tab_button">🔨Create</button></a>
+                <div style="width: 5px;"></div> 
+                <a href="../Experiments"><button class="selectable_tab_button">🧪Experiments and tests</button></a>
+            </div>
+        </div>
+        <div class="center_area">
+            <div id="left_ad_area">
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/AdTemplate.png">
+                </a>
+            </div>
+            <div id="right_ad_area">
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="../Errors/AdNotFound/">
+                    <img class="ad_img" src="../Assets/Images/AdTemplate.png">
+                </a>
+            </div>
+            <div id="large_main_games_area">
+                <div id="main_search_area"></div>
+                <div id="main_games_scrolling_area">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+
+const scrollingArea = document.getElementById("main_games_scrolling_area");
+const gameList = [{
+    "id":"PentiumIII",
+    "display_name":"32-bit x86 PC",
+    "description":`An PC emulator from around 2009. The emulator is v86, emulating an Pentium III/IV<br>It can run Windows 7`,
+},];
+
+for(i=0;i<gameList.length;i++){
+    const gameData = gameList[i];
+    let newDocData = `
+<div class="game_card_area_child">
+    <div class="game_card_icon_image_area">
+        <img class="game_card_icon_img" src="../Assets/Images/Emulators/${gameData.id}.png">
+        </div>
+            <div class="game_card_description_div">
+            <strong class="game_card_description_title">${gameData.display_name}</strong>
+            <div class="game_card_description_text">
+            <span>
+                ${gameData.description}
+            </span>
+            <br>
+        </div>
+        ${gameData.disabled? "<button disabled style=\"cursor:not-allowed;\" class=\"game_card_play_button\">Unavaliable</button>" : `<a href=\"./${gameData.id}/\"><button class=\"game_card_play_button\">Run</button></a>`}
+    </div>
+</div>`;
+
+    let node = document.createElement("div");
+    scrollingArea.appendChild(node);
+    node.className = "game_card_area";
+    node.innerHTML = newDocData;
+}
+
+let val = Math.floor(Math.random()*5);
+
+setTimeout(() => {
+    const adsImgs = document.getElementsByClassName("ad_img");
+    for(let i=0;i<adsImgs.length;i++){
+        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%5}.png`;
+    }
+}, 100);
+
+
+</script>
+
+</body>
+
+<style>
+    body{
+    display: block;
+    justify-content: normal;
+    align-content: normal;
+    height:max-content;
+    margin: 0;
+    background-color: #07032c;
+    background-size: 10px;
+    background-repeat: repeat;
+    overflow-y: scroll;
+    font-size:medium;
+    color: #ffffff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .main_div{
+        height: max-content;
+    }
+
+    .ad_a{
+        display: block;
+        height: max-content;
+        margin-top: 10px;
+    }
+
+    .center_area{
+        width: 100%;
+        height: fit-content;
+        display: inline-flex;
+    }
+    
+    #left_ad_area{
+        position: absolute;
+        width: 250px;
+        height: fit-content;
+    }
+
+    .game_card_area{
+        height: 180px;
+    }
+
+    #right_ad_area{
+        position: absolute;
+        right: 0px;
+        width: 250px;
+        height: max-content;
+    }
+
+    #large_main_games_area{
+        display: block;
+        width: 800px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ad_img{
+        top: 0px;
+        display: block;
+        width: 250px;
+        height: 600px;
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+    #svg_top_logo{
+        width: 200px;
+    }
+
+    .game_card_area_div{
+        border-radius: 5px;
+        display: flex;
+        width: 100%;
+        height: 140px;
+        padding-top: 10px;
+    }
+    
+    .game_card_area_child{
+        border-radius: 5px;
+        display: flex;
+        width: 100%;
+        height: 140px;
+    }
+    
+
+    .top_area{
+        background-color: #08061a;
+    }
+
+    .game_card_icon_img{
+        background-color: #ffffff;
+        height: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+    }
+
+    .game_card_description_div{
+        display: block;
+    }
+
+    .game_card_description_text{
+        padding-top: 10px;
+        font-size: small;
+        height: calc(100% - 70px);
+    }
+
+    .game_card_description_title{
+        font-size: large;
+    }
+
+    .game_card_play_button{
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(56, 157, 252);
+        color: white;
+        width: 120px;
+        position: relative;
+        left: 0px;
+        bottom: 0px;
+        font-family:cursive;
+        font-size: large;
+    }
+
+    .game_card_icon_image_area{
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width:140px;
+    }
+
+    #main_games_scrolling_area{
+        background-color: #0d0744;
+        width: 800px;
+        height: 100%;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;       
+        z-index: 10; 
+    }
+
+    .selectable_tab_button{
+        border-radius: 10px;
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: rgb(56, 157, 252);
+        color: white;
+        height: 25px;
+        font-weight: bold;
+    }
+
+</style>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="icon" href="../../Assets/google_favicon.ico">
+    <meta name="description" content="Web games, hopefully unblocked 👍">
+</head>
+
+<body>
+<noscript style="z-index: 1000; width: 100%; height: 100%; position: fixed; background-color: #07032c;">
+    <center>
+        <h1>⚠️ - Please enable JavaScript to proceed. - ⚠️</h1>
+        <p>
+            In Chrome, open settings, go to Security --&gt; JavaScript --&gt; click on Allow JavaScript
+        </p>
+    </center>
+</noscript>
+<main>
+    <div class="loading_area" id="loading_area">
+        <img alt="loading wheel" id="loading_wheel" src="../../Assets/Images/Spinning.png">
+    </div>
+    
+</main>
+
+<script>
+const url = "../../Assets/Templates/GamePage.html";
+const scriptUrl = "../../Assets/Templates/FullScreenScript.JS";
+const loadingScreen = document.getElementById("loading_area");
+const gameName = "v86 emulator | Pentium III | Windows 7"
+const gameFrame = `<iframe width="100%" height="100%" allow="fullscreen; autoplay; encrypted-media" src="https://browser7.win/" frameborder="0" allowfullscreen="true" msallowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" allowpaymentrequest="false" referrerpolicy="unsafe-url" sandbox="allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" scrolling="no"></iframe>`;
+
+
+async function requestServerFile(url) {
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+        }
+
+        const fileContent = await response.text();
+        return fileContent;
+
+    } catch (error) {
+        console.error("Failed to load page:", error);
+        alert("Failed to load page");
+    }
+}
+
+let pageRequest = requestServerFile(url);
+pageRequest.then((pageContent)=>{
+    //console.log(pageContent);
+    let newPage = (pageContent.replace(/!_GAMENAME/g,gameName)).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
+    loadingScreen.remove();
+    document.body.innerHTML = newPage;
+    setTimeout(()=>{
+        let scriptRequest = requestServerFile(scriptUrl);
+        scriptRequest.then((scriptContent)=>{
+            const script = document.createElement("script");
+            script.textContent = scriptContent; 
+            document.body.appendChild(script);
+        });
+    },1);
+})
+</script>
+
+
+
+<style>
+    body{
+        display: block;
+        justify-content: normal;
+        align-content: normal;
+        height: 100%;
+        margin: 0;
+        background-color: #07032c;
+        background-size: 10px;
+        background-repeat: repeat;
+        overflow-y: scroll;
+        font-size:medium;
+        color: #ffffff;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .loading_area{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: #07032c;
+        position: absolute;
+        z-index: 20;
+        align-items: center;
+    }
+
+    #loading_wheel{
+        display: inline;
+        position: relative; 
+        margin-left: auto;
+        margin-right: auto;
+        width: 70px;
+        height: 70px;
+    }
+</style>
