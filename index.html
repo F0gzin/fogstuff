@@ -125,6 +125,12 @@ const gameList = [{
     "disabled":false
 },
 {
+    "id":"BaldisBasics",
+    "display_name":"Baldi's Basics in Education and Learning",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
     "id":"GenericRoleplayGame",
     "display_name":"Generic Roleplay Game",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>Farm crops, chop wood, and contribute to the town economy!<br>Become a guard, maybe a doctor, or a president!<br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/4598019433/generic-roleplay-gaem\">here</a>",
@@ -176,7 +182,6 @@ const gameList = [{
     "display_name":"Little World Sandbox",
     "description":`placeholder`
 },
-
 {
     "id":"ZumbiBlocks",
     "display_name":"Zumbi Blocks",
@@ -203,7 +208,62 @@ const gameList = [{
     "display_name":"Stickman Sandbox",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
     "disabled":true
+},
+{
+    "id":"GarrysMod",
+    "display_name":"Garry's Mod",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"CrazyCattle3D",
+    "display_name":"Crazy Cattle 3D",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"PapasBurgeria",
+    "display_name":"Papa's Burgeria",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"Factorio",
+    "display_name":"Factorio",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"ToiletWarsPC",
+    "display_name":"Toilet Wars PC",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"FNAF1",
+    "display_name":"Five Nights at Freddy's 1",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"ClubPenguin",
+    "display_name":"Club Penguin",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"Portal",
+    "display_name":"Portal 1",
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+    "disabled":true
+},
+{
+    "id":"ThrowAPotato",
+    "display_name":"Throw a Potato 1",
+    "description":"Original game <a href=\"https://www.construct.net/en/free-online-games/throw-potato-27703/play?via=mh\">here</a>",
+    "disabled":false
 }
+
 
 ];
 
@@ -238,7 +298,7 @@ let val = Math.floor(Math.random()*5);
 setTimeout(() => {
     const adsImgs = document.getElementsByClassName("ad_img");
     for(let i=0;i<adsImgs.length;i++){
-        adsImgs[i].src = `./Assets/Images/Ads/${(val+i)%5}.png`;
+        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%5}.png`;
     }
 }, 100);
 
@@ -401,6 +461,4 @@ setTimeout(() => {
 
 </style>
 
-
 </html>
-
