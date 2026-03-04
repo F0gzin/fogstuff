@@ -1,5 +1,4 @@
 const body = document.body;
-console.log("hello");
 const fullscreenButton = document.getElementById("maximize_button");
 const gameArea = document.getElementById("game_frame_container");
 const defaultState = "overflow-y:hidden;position:relative;margin-left: auto;margin-right: auto;z-index: 1000;height: calc(100% - 60px);"
@@ -32,3 +31,12 @@ document.addEventListener('fullscreenchange', (e)=>{
         body.style.overflowY = "scroll";
     }
 });
+
+let val = Math.floor(Math.random()*5);
+
+setTimeout(() => {
+    const adsImgs = document.getElementsByClassName("ad_img");
+    for(let i=0;i<adsImgs.length;i++){
+        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%5}.png`;
+    }
+}, 100);
