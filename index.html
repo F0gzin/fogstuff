@@ -113,12 +113,6 @@ const gameList = [{
     "disabled":false
 },
 {
-    "id":"PetsFightRemake",
-    "display_name":"Pets Fight [Remake]",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
     "id":"CS1.6",
     "display_name":"Counter Strike 1.6",
     "description":"CS 1.6 ported to browser! Original port <a href=\"https://play-cs.com/pt/servers\">here</a>",
@@ -151,12 +145,13 @@ const gameList = [{
 {
     "id":"DDLC",
     "display_name":"Doki Doki Literature Club!",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a>",
+    /*"description":"Welcome to the Literature Club! It's always been a dream of mine to make something special out of the things I love.<br> Now that you're a club member, you can help me make that dream come true in this cute game!<br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",*/
+    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",
     "disabled":true
 },
 {
-    "id":"PetsFightClassic",
-    "display_name":"Pets Fight [Classic]",
+    "id":"PetsFight",
+    "display_name":"Pet's Fight",
     "description":`Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!`
 },
 {
@@ -164,6 +159,18 @@ const gameList = [{
     "display_name":"Skebob Clicker",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
     "disabled":true
+},
+{
+    "id":"GeometryDashLite",
+    "display_name":"Geometry Dash Lite (JS)",
+    "description":"🔥🔥🔥",
+    "disabled":false
+},
+{
+    "id":"GeometryDashScratch",
+    "display_name":"Geometry Dash (Scratch version)",
+    "description":"Geometry Dash ported to Scratch.",
+    "disabled":false
 },
 {
     "id":"PVZ",
@@ -224,8 +231,8 @@ const gameList = [{
 {
     "id":"PapasBurgeria",
     "display_name":"Papa's Burgeria",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
+    "description":"A Flash classic. Work at a burgeria.",
+    "disabled":false
 },
 {
     "id":"Factorio",
@@ -234,7 +241,7 @@ const gameList = [{
     "disabled":true
 },
 {
-    "id":"ToiletWarsPC",
+    "id":"ToiletWars",
     "display_name":"Toilet Wars PC",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
     "disabled":true
@@ -262,7 +269,13 @@ const gameList = [{
     "display_name":"Throw a Potato 1",
     "description":"Original game <a href=\"https://www.construct.net/en/free-online-games/throw-potato-27703/play?via=mh\">here</a>",
     "disabled":false
-}
+},
+{
+    "id":"EscapingThePrison",
+    "display_name":"Henry Stickmin: Escaping the Prison",
+    "description":"Classic Flash game.",
+    "disabled":false
+},
 
 
 ];
@@ -298,7 +311,7 @@ let val = Math.floor(Math.random()*5);
 setTimeout(() => {
     const adsImgs = document.getElementsByClassName("ad_img");
     for(let i=0;i<adsImgs.length;i++){
-        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%5}.png`;
+        adsImgs[i].src = `../Assets/Images/Ads/${(val+i)%5}.png`;
     }
 }, 100);
 
