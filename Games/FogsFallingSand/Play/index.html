@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Sand</title>
+    <link rel="icon" href="../../../Assets/google_favicon.ico">
+    <meta name="description" content="Sandbox game about stickmen">
+</head>
+
+<body>
+<div id="main_area">
+    <canvas id="main_game_canvas">
+
+    </canvas>
+</div>
+</body>
+
+<script defer>
+const scrWidth = 640;
+const scrHeight = 480;
+/**@type {HTMLCanvasElement|null} */
+const canvas = document.getElementById("main_game_canvas");
+canvas.width = scrWidth;
+canvas.height = scrHeight;
+const ctx = canvas.getContext("2d");
+ctx.imageSmoothingQuality = "low";
+ctx.imageSmoothingEnabled = false;
+const FPS = 32;
+let tickCount = 0;
+let accumulatedTime = 1;
+let lastFrameTime = performance.now();
+let frameDuration = 1000/FPS;
+const tileColors = [
+    /*0*/"rgb(0,0,0)",
+    /*1*/"rgb(255,255,0)"
+];
+
+let world = [];
+for(x=0;x<scrWidth;x++){
+    let value = [];
+    for(y=0;y<scrHeight;y++){
+        value[y]=Math.round(Math.random());
+    }
+    world[x]=value;
+}
+
+startGame();
+
+function update(){
+}
+
+function render(){
+    ctx.fillStyle = "rgb(0,0,0)";
+    ctx.fillRect(0,0,scrWidth,scrHeight);
+
+    for(x=0;x<scrWidth;x++){
+        for(y=0;y<scrHeight;y++){
+            if(world[x][y]!=0){
+                ctx.fillStyle = tileColors[world[x][y]];
+                ctx.fillRect(x,y,1,1);
+            }
+        }
+    }
+}
+
+let lastTime = performance.now();
+
+function gameLoop(timestamp) {
+    tickCount++;
+    const deltaTime = timestamp - lastFrameTime;
+    lastFrameTime = timestamp;
+    accumulatedTime += deltaTime;
+    while(accumulatedTime >= frameDuration){
+        update();
+        render();
+        accumulatedTime -= frameDuration;
+    }
+
+    requestAnimationFrame(gameLoop);
+}
+
+function startGame(){
+    requestAnimationFrame(gameLoop);
+}
+</script>
+
+<style>
+body{
+    background-color: black;
+}
+#main_area{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+}
+#main_game_canvas{
+    background-color: grey;
+    width: 640px;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
