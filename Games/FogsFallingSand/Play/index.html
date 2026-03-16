@@ -13,11 +13,15 @@
 
     </canvas>
 </div>
+<div>
+    <button>❌Eraser</button>
+    <button>🏖️Sand</button>
+</div>
 </body>
 
 <script defer>
-const scrWidth = 640;
-const scrHeight = 480;
+const scrWidth = 90;
+const scrHeight = 90;
 /**@type {HTMLCanvasElement|null} */
 const canvas = document.getElementById("main_game_canvas");
 canvas.width = scrWidth;
@@ -25,54 +29,149 @@ canvas.height = scrHeight;
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingQuality = "low";
 ctx.imageSmoothingEnabled = false;
-const FPS = 32;
+const FPS = 20;
 let tickCount = 0;
-let accumulatedTime = 1;
+let accumulatedTime = 0;
 let lastFrameTime = performance.now();
 let frameDuration = 1000/FPS;
+let mouse = {x:0,y:0,isDown:false,x_:0,y_:0,justGotUp:false,justGotDown:false};
 const tileColors = [
-    /*0*/"rgb(0,0,0)",
-    /*1*/"rgb(255,255,0)"
+    /*0*/[0,0,0],
+    /*1*/[255,255,0]
 ];
 
+document.addEventListener('mousemove', (event) => {
+    const xPos = event.clientX;
+    const yPos = event.clientY;
+
+    mouse.x_ = xPos || 0;
+    mouse.y_ = yPos || 0;
+
+    const rect = canvas.getBoundingClientRect();
+    const canvasAspect = canvas.width / canvas.height;
+    const rectAspect = rect.width / rect.height;
+
+    let drawWidth, drawHeight;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (rectAspect > canvasAspect) {
+        drawHeight = rect.height;
+        drawWidth = drawHeight * canvasAspect;
+        offsetX = (rect.width - drawWidth) / 2;
+    } else {
+        // top and bottom bars
+        drawWidth = rect.width;
+        drawHeight = drawWidth / canvasAspect;
+        offsetY = (rect.height - drawHeight) / 2;
+    }
+
+    const x = (event.clientX - rect.left)-offsetX;
+    const y = (event.clientY - rect.top)-offsetY;
+
+    const normalizedX = x * (canvas.width / drawWidth);
+    const normalizedY = y * (canvas.height / drawHeight);
+
+    mouse.x = normalizedX || 0;
+    mouse.y = normalizedY || 0;
+});
+
+document.addEventListener('mousedown', () => {
+    mouse.isDown = true;
+    mouse.justGotDown = true;
+});
+
+document.addEventListener('mouseup', () => {
+    mouse.isDown = false;
+    mouse.justGotUp = true;
+});
+
 let world = [];
+let updateMap = [];
+
 for(x=0;x<scrWidth;x++){
     let value = [];
+    let value2 = [];
     for(y=0;y<scrHeight;y++){
-        value[y]=Math.round(Math.random());
+        if(y<100){
+            value2[y]=0;
+            value[y]=Math.round(Math.random());
+        }
+        //value[y]=0;
     }
+    updateMap[x]=value2;
     world[x]=value;
 }
 
+world[Math.floor(scrWidth/2)][0]=1
+
 startGame();
 
-function update(){
-}
-
-function render(){
-    ctx.fillStyle = "rgb(0,0,0)";
-    ctx.fillRect(0,0,scrWidth,scrHeight);
-
-    for(x=0;x<scrWidth;x++){
-        for(y=0;y<scrHeight;y++){
-            if(world[x][y]!=0){
-                ctx.fillStyle = tileColors[world[x][y]];
-                ctx.fillRect(x,y,1,1);
+function updateTile(x,y,p){
+    let st = tileColors[p]
+    let r = Math.floor(x-y^((x*y*(3141.5|(x/y)))%512)/100)-50;
+    ctx.fillStyle = `rgb(${st[0]+r},${st[1]+r},${st[2]+r})`;
+    ctx.fillRect(x,y+1,1,1);
+    if(y<scrHeight){
+        if(world[x][y+1]===0){
+            world[x][y+1]=1
+            updateMap[x][y+1]=1;
+            world[x][y]=0
+        }else{
+            let side = tickCount%2===0 ? -1 : 1;
+            if(x+side>=scrWidth||x+side<0){return;}
+            if(world[x+side][y+1]===0){
+                world[x+side][y+1]=1
+                updateMap[x+side][y+1]=1;
+                world[x][y]=0
+            }else{
+                if((x-side<0&&x-side>=scrWidth)&&world[x-side][y+1]===0){
+                    world[x-side][y+1]=1
+                    updateMap[x-side][y+1]=1;
+                    world[x][y]=0
+                }
             }
         }
     }
 }
 
-let lastTime = performance.now();
+function update(){
+    if(mouse.isDown){
+        if(mouse.x>=0&&mouse.x<scrWidth){
+            world[Math.floor(mouse.x)][Math.floor(mouse.y)]=1;
+        }
+    }
+    for(x=scrWidth-1;x>=0;x--){
+        for(y=scrHeight-1;y>=0;y--){
+            updateMap[x][y]=0;
+        }
+    }
+    for(x=scrWidth-1;x>=0;x--){
+        for(y=scrHeight-1;y>=0;y--){
+            let p = world[x][y];
+            let u = updateMap[x][y];
+            if(p&&!u){
+                updateMap[x][y]=1;
+                updateTile(x,y,p)
+            }
+        }
+    }
+}
+
+function render(){
+    ctx.fillStyle = "rgb(0,0,0)";
+    ctx.fillRect(0,0,scrWidth,scrHeight);
+}
 
 function gameLoop(timestamp) {
     tickCount++;
     const deltaTime = timestamp - lastFrameTime;
     lastFrameTime = timestamp;
     accumulatedTime += deltaTime;
+
     while(accumulatedTime >= frameDuration){
-        update();
         render();
+        update(frameDuration,deltaTime);
         accumulatedTime -= frameDuration;
     }
 
@@ -82,23 +181,42 @@ function gameLoop(timestamp) {
 function startGame(){
     requestAnimationFrame(gameLoop);
 }
+
 </script>
 
 <style>
 body{
-    background-color: black;
+    background-color: rgb(7, 8, 51);
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    font-family: 'Cursive', 'Arial', 'Verdana';
+    align-content: center;
+    margin: 0px;
+    margin-top: 0px;
+}
+button{
+    cursor: pointer;
+    background-color: rgb(0,0,0);
+    color: white;
 }
 #main_area{
+    z-index: 0;
+    position: fixed;
     width: 100%;
     height: 100%;
-    display: grid;
-    align-content: center;
+    margin-top: 0px;
+    top: 0px;
 }
 #main_game_canvas{
-    background-color: grey;
-    width: 640px;
-    height: 480px;
+    display: flex;
+    position: relative;
+    object-fit: contain;
     margin-left: auto;
     margin-right: auto;
+    top: 0px;
+    width: auto;
+    height: 100%;
+    image-rendering: pixelated;
 }
 </style>
