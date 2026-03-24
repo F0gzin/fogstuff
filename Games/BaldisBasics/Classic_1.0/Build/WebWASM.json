@@ -1,0 +1,15 @@
+{
+"companyName": "mystman12",
+"productName": "Baldi's Basics in Education and Learning",
+"dataUrl": "WebWASM.data.unityweb",
+"wasmCodeUrl": "WebWASM.wasm.code.unityweb",
+"wasmFrameworkUrl": "WebWASM.wasm.framework.unityweb",
+"asmCodeUrl": "WebWASM.asm.code.unityweb",
+"asmMemoryUrl": "WebWASM.asm.memory.unityweb",
+"asmFrameworkUrl": "WebWASM.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000"
+}

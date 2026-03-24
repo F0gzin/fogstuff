@@ -28,7 +28,31 @@ const url = "../../Assets/Templates/GamePage.html";
 const scriptUrl = "../../Assets/Templates/FullScreenScript.JS";
 const loadingScreen = document.getElementById("loading_area");
 
-const gameFrame = `<iframe width="100%" height="100%" allow="fullscreen; autoplay; encrypted-media" src="./Classic_4.5/index.html" frameborder="0" allowfullscreen="true" msallowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" allowpaymentrequest="false" referrerpolicy="unsafe-url" sandbox="allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" scrolling="no"></iframe>`;
+const SCRIP = `
+console.log('!');
+const CoolFrame = document.getElementById('game_frame_container');
+let baldiver = document.getElementById('version_selector').value;
+CoolFrame.innerHTML = '<h1>...!</h1>';
+setTimeout(function(){
+    CoolFrame.innerHTML = \`<iframe width=&quot;100%&quot; height=&quot;100%&quot; allow=&quot;fullscreen; autoplay; encrypted-media&quot; src=&quot;./\${baldiver}/index.html&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; msallowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot; allowpaymentrequest=&quot;false&quot; referrerpolicy=&quot;unsafe-url&quot; sandbox=&quot;allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups&quot; scrolling=&quot;no&quot;></iframe>\`;
+},200);
+`;
+
+const gameFrame = `
+<div style="overflow:hidden;background-color:#ffffff;position:absolute;width:100%;height:100%;margin:0px;">
+
+<img style="position:absolute;" src="../../Assets/GameImages/BaldisBasics/Launcher.png">
+
+<div style="position:relative;left:0px;top:0px;width:100%;height:100%;display:grid-flex;padding:3px;align-content:end;">
+    <select style="background-color:#ffffff;cursor:pointer;width:200px;height:40px;font-style:oblique;font-weight: 100;font-size: medium;font-family: 'Comic Sans MS', Cursive, Arial;" id="version_selector" name="version_selector">
+        <option value="Classic_1.0">Classic 1.0 (WASM)</option>
+        <option value="Classic_4.5">Classic 4.5 (WASM)</option>
+    </select>
+    <button onclick="${SCRIP}" style="background-color:#ffffff;cursor:pointer;width:200px;height:40px;font-style:oblique;font-weight: 100;font-size: medium;font-family: 'Comic Sans MS', Cursive, Arial;">Play it!</button>
+    <button style="background-color:#dddddd;cursor:not-allowed;width:200px;height:40px;font-style:oblique;font-weight: 100;font-size: medium;font-family: 'Comic Sans MS', Cursive, Arial;">Hacks (coming soon)</button>
+</div>
+</div>
+`;
 
 
 async function requestServerFile(url) {
