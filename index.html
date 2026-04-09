@@ -119,6 +119,12 @@ const gameList = [{
     "disabled":false
 },
 {
+    "id":"XtremeObstacleCourse",
+    "display_name":"Xtreme Obstacle Course",
+    "description":"Game created by the youtuber @Lawnchooks",
+    "disabled":false
+},
+{
     "id":"BaldisBasics",
     "display_name":"Baldi's Basics in Education and Learning",
     "description":"Baldi's Basics is a meta horror game that's really weird, with no real educational value to be found.<br>Collect all 7 of the notebooks and escape the school, all while avoiding Baldi",
@@ -203,11 +209,6 @@ const gameList = [{
     "disabled":true
 },
 {
-    "id":"LittleWorld",
-    "display_name":"Little World Sandbox",
-    "description":`placeholder`
-},
-{
     "id":"ZumbiBlocks",
     "display_name":"Zumbi Blocks",
     "description":"game by Adrian Kaminski<br><img src=\"./Assets/Gifs/UnderConstruction.gif\">",
@@ -265,6 +266,12 @@ const gameList = [{
     "description":"Ported by @irv77",
 },
 {
+    "id":"FNAF4",
+    "display_name":"FNAF 4",
+    "description":"Thanks Scott and thanks @irv77",
+    "disabled":false
+},
+{
     "id":"UCN",
     "display_name":"FNAF: Ultimate Custom Night",
     "description":"UCN, Ported by @irv77",
@@ -273,6 +280,12 @@ const gameList = [{
     "id":"FNAW",
     "display_name":"Five Nights at Winston's",
     "description":"Game about baby winston and being hunted by erasers.<br>This game is takes place at Lax1dude's school. You play as the janitor.<br>Original game <a href=\"https://g.deev.is/fnaw/\">here!</a>",
+},
+{
+    "id":"FNAE",
+    "display_name":"Five Nights at Epstein's",
+    "description":"W game",
+    "disabled":false
 },
 {
     "id":"ClubPenguin",
@@ -298,6 +311,54 @@ const gameList = [{
     "description":"Classic Flash game.",
     "disabled":false
 },
+{
+    "id":"DuckLife",
+    "display_name":"Duck Life",
+    "description":"Classic Flash game.",
+    "disabled":false
+},
+{
+    "id":"DuckLife2",
+    "display_name":"Duck Life 2",
+    "description":" ",
+    "disabled":false
+},
+{
+    "id":"BloonsClassic",
+    "display_name":"Bloons Classic",
+    "description":" ",
+    "disabled":false
+},
+{
+    "id":"InteractiveBuddy",
+    "display_name":"Interactive Buddy",
+    "description":" ",
+    "disabled":false
+},
+{
+    "id":"SugarSugar",
+    "display_name":"Sugar Sugar",
+    "description":" ",
+    "disabled":false
+},
+{
+    "id":"PortalFlash",
+    "display_name":"Portal Flash",
+    "description":" ",
+    "disabled":false
+},
+{
+    "id":"PortalScratch",
+    "display_name":"Portal 3D (Scratch edition)",
+    "description":"game by @Chooper100",
+    "disabled":false
+},
+{
+    "id":"ScratchBloonsTD",
+    "display_name":"Scratch Bloons TD",
+    "description":"game by @ggenije",
+    "disabled":false
+},
 
 
 ];
@@ -307,7 +368,7 @@ for(i=0;i<gameList.length;i++){
     let newDocData = `
 <div class="game_card_area_child">
     <div class="game_card_icon_image_area">
-        <img class="game_card_icon_img" src="Assets/GameImages/${gameData.id}/icon.png">
+        <img class="game_card_icon_img" src="Assets/GameImages/${gameData.id}.png">
         </div>
             <div class="game_card_description_div">
             <strong class="game_card_description_title">${gameData.display_name}</strong>
@@ -434,6 +495,7 @@ setTimeout(() => {
     .game_card_icon_img{
         background-color: #ffffff;
         height: calc(100% - 20px);
+        width:120px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 5px;
