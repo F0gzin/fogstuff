@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | -3</title>
+  </head>
+  <body style="text-align: center; position: absolute; width: 100%; height: 100%; margin-top: 0px; margin-left: 0px;">
+    <canvas id="unity-canvas" width=960 height=600 style="width: 100%; height: 100%; margin-top: 0px; margin-left: 0px; background: #000000"></canvas>
+    <script src="Build/MinusThree.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/MinusThree.data.unityweb",
+        frameworkUrl: "Build/MinusThree.framework.js.unityweb",
+        codeUrl: "Build/MinusThree.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Mauzer2137",
+        productName: "-3",
+        productVersion: "3.-3",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
