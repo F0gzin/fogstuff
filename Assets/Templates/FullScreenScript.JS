@@ -37,6 +37,6 @@ let val = Math.floor(Math.random()*5);
 setTimeout(() => {
     const adsImgs = document.getElementsByClassName("ad_img");
     for(let i=0;i<adsImgs.length;i++){
-        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%5}.png`;
+        adsImgs[i].src = `../../Assets/Images/Ads/${(val+i)%11}.png`;
     }
 }, 100);

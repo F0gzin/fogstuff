@@ -1,32 +1,14 @@
 <main>
     <div class="main_div">
         <div class="top_area">
-            <a href="https://f0gzin.github.io/fogstuff/">
-                <img id="svg_top_logo" src="../../Assets/Logo/White.svg" alt="FogStuff logo">
+            <a class="FogstuffLogoContainer" href="https://f0gzin.github.io/fogstuff/">
+                <img class="FogstuffLogo" src="../../Assets/Logo/White.svg" alt="FogStuff logo">
             </a>
             <div style="display: inline;">
                     <p><marquee scrollamount="22"><span>Cool unblocked web-games to waste time in school's computer lab instead of doing work..</span></marquee></p>
             </div>
             <div style="display: flex;">
-                <!--<button class="selectable_tab_button">🎮Web Games</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">🌐Links</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">📃About</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">📥Downloads</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">👾Emulators</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">🎭Proxys</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">💬Chatrooms</button>
-                <div style="width: 5px;"></div>
-                <button class="selectable_tab_button">🔨Create</button>
-                <div style="width: 5px;"></div> 
-                <button class="selectable_tab_button">🤖AI's</button>
-                <div style="width: 5px;"></div> 
-                <button class="selectable_tab_button">🧪Experiments and tests</button>-->
+
             </div>
         </div>
         <div id="ads">
@@ -53,17 +35,17 @@
                     </div>
                     <div id="game_bottom_toolbar">
                         <span>
-                            <button title="Maximize" id="maximize_button">
+                            <button class="game_toolbar_button" title="Maximize" id="maximize_button">
                                 <img src="../../Assets/Images/Icons/maximize_x24.png">
                             </button>
-                            <button title="Share" id="share_button">
+                            <button class="game_toolbar_button" title="Share" id="share_button">
                                 <img src="../../Assets/Images/Icons/share_x24.png">
                             </button>
-                            <a href="./About">
-                                <button title="About" id="help_about_game_button">
+                            <button class="game_toolbar_button" title="About" id="help_button">
+                                <a href="./About">
                                     <img src="../../Assets/Images/Icons/question_mark_x24.png">
-                                </button>
-                            </a>
+                                </a>
+                            </button>
                         </span>
                     </div>
                 </div>
@@ -137,7 +119,7 @@
         align-content: normal;
         height: 100%;
         margin: 0;
-        background-color: #07032c;
+        background-color: #1d1d1d;
         background-size: 10px;
         background-repeat: repeat;
         overflow-y: scroll;
@@ -148,19 +130,24 @@
 
     .post_comment_input{
         width: calc(100% - 40px);
-        background-color: #08061a;
+        background-color: #0f0f10;
         outline-style: solid;
         outline-width: 1px;
         color: white;
-        outline-color: #d5dde7;
+        outline-color: #222323;
         font-style: normal;
         font-size: medium;
         font-weight: 100;
         font-family: Comic Sans MS, Cursive, Arial, Verdana, Frutiger, system-ui, sans-serif, open-sans;
     }
 
+    iframe{
+        -webkit-user-select: none; /* Safari */
+        user-select: none;
+    }
+
     .post_comment_button{
-        background-color: #07032c;
+        background-color: #181819;
         outline-style: solid;
         outline-width: 1px;
         color: white;
@@ -247,7 +234,7 @@
     }
 
     .comment_reactions_sec button{
-        background-color: #07032c;
+        background-color: #191919;
         color: white;
         height: 24px;
         position:relative;
@@ -255,7 +242,7 @@
         bottom: 4px;
         outline-style: solid;
         outline-width: 1px;
-        outline-color: #1a1075;
+        outline-color: #262626;
     }
 
     .comment_reactions_sec img{
@@ -277,7 +264,6 @@
         align-content: normal;
         width: 100%;
         height: 100px;
-        background-color: #07032c;
         margin-top: 10px;
         outline-style: solid;
         outline-width: 1px;
@@ -327,16 +313,49 @@
         height: 100%;
     }
 
-    button{
-        cursor: pointer;
-        background-color: #11095c;
+    .game_toolbar_button{
+        display: flexbox;
+        position: inherit;
+        margin-left: 2px;
+        width: 34px;
+        height: 34px;
+        align-content: center;
+        align-items: center;
     }
 
-    #svg_top_logo{
-        width: 200px;
+    .game_toolbar_button img{
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+        object-fit: contain;
+    }
+
+    button{
+        cursor: pointer;
+        border-radius: 2px;
+        border: none;
+        background-color: rgb(46, 46, 52);
+        color: rgb(0, 0, 0);
+        position: relative;
+        left: 0px;
+        bottom: 0px;
+        font-family: 'Segoe UI', cursive, 'Comic Sans MS', Arial, Helvetica;
+        font-size: large;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    button:disabled{
+        background-color: rgb(1, 1, 1);
+        color: rgb(193, 193, 193);
+    }
+    
+    button:hover{
+        background-color: rgb(29, 29, 34);
     }
 
     #game_area{
+        background-color: #161616;
         margin-top: 15px;
         margin-left: auto;
         margin-right: auto;
@@ -344,7 +363,7 @@
         height: 750px;
         outline-style: solid;
         outline-width: 1px;
-        outline-color: #ffffff;
+        outline-color: #3c3c40;
     }
 
     #game_area_main_center{
@@ -356,13 +375,13 @@
     }
 
     #game_top_toolbar{
-        background-color: #050316;
+        background-color: #1b1a1d;
         width: 100%;
         position: relative;
     }
     
     #game_bottom_toolbar{
-        background-color: #050316;
+        background-color: #1b1a1d;
         width: 100%;
         position: relative;
     }
@@ -374,6 +393,7 @@
         font-size: larger;
         margin-left: auto;
         margin-right: auto;
+        
     }
 
     #game_frame_container{
@@ -381,6 +401,8 @@
         margin-right: auto;
         z-index: 1000;
         height: calc(100% - 60px);
+        -webkit-user-select: none; /* Safari */
+        user-select: none;
     }
 
     .game_card_area_div{
@@ -392,7 +414,12 @@
     }
     
     .top_area{
-        background-color: #08061a;
+        background-color: #161617;
+    }
+
+    marquee{
+        background-color: rgb(15, 15, 15);
+        color: white;
     }
 
     .game_card_icon_img{
@@ -417,17 +444,23 @@
         font-size: large;
     }
 
-    .game_card_play_button{
-        border-radius: 10px;
-        border: none;
-        background-color: rgb(56, 157, 252);
-        color: white;
-        width: 120px;
-        position: relative;
-        left: 0px;
-        bottom: 0px;
-        font-family:cursive;
-        font-size: large;
+    .FogstuffLogoContainer{
+        display: block;
+        width: 100%;
+        -webkit-user-select: none; /* Safari */
+        user-select: none;
+    }
+
+    img{
+        -webkit-user-select: none; /* Safari */
+        user-select: none;
+    }
+
+    .FogstuffLogo{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
     }
 
     .game_card_icon_image_area{
@@ -439,17 +472,6 @@
 
     #main_games_scrolling_area{
         display: grid;
-    }
-
-    .selectable_tab_button{
-        border-radius: 10px;
-        border: none;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color: rgb(56, 157, 252);
-        color: white;
-        height: 25px;
-        font-weight: bold;
     }
 
 </style>

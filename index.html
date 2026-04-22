@@ -21,15 +21,15 @@
     
     <div class="main_div">
         <div class="top_area">
-            <a href="https://f0gzin.github.io/fogstuff/">
-                <img id="svg_top_logo" src="Assets/Logo/White.svg" alt="FogStuff logo">
+            <a class="FogstuffLogoContainer" href="https://f0gzin.github.io/fogstuff/">
+                <img class="FogstuffLogo" id="svg_top_logo" src="Assets/Logo/White.svg" alt="FogStuff logo">
             </a>
             <div style="display: inline;">
                 <!--<img style="display: inline; image-rendering: pixelated; float: right;" src="./Assets/Gifs/under construction.gif">-->
                 <p><marquee scrollamount="22"><span>Cool unblocked web-games to waste time in school's computer lab instead of doing work..</span></marquee></p>
             </div>
-            <div style="display: flex;">
-                <button class="selectable_tab_button" style="background-color: lime; color: black;">🎮Web Games</button>
+            <div id="top_area_buttons">
+                <button class="selectable_tab_button" style="background-color: rgb(58, 110, 178); color: rgb(224, 255, 255);">🎮Web Games</button>
                 <div style="width: 5px;"></div>
                 <a href="./Links"><button class="selectable_tab_button">🌐Links</button></a>
                 <div style="width: 5px;"></div>
@@ -46,6 +46,7 @@
                 <a href="./Create"><button class="selectable_tab_button">🔨Create</button></a>
                 <div style="width: 5px;"></div> 
                 <a href="./Experiments"><button class="selectable_tab_button">🧪Experiments and tests</button></a>
+                <div style="width: 5px;"></div> 
             </div>
         </div>
         <div class="center_area">
@@ -55,6 +56,12 @@
                 </a>
                 <a class="ad_a" href="./Errors/AdNotFound/">
                     <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/AdTemplate.png">
                 </a>
                 <a class="ad_a" href="./Errors/AdNotFound/">
                     <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
@@ -76,6 +83,13 @@
                 <a class="ad_a" href="./Errors/AdNotFound/">
                     <img class="ad_img" src="./Assets/Images/AdTemplate.png">
                 </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                <a class="ad_a" href="./Errors/AdNotFound/">
+                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
+                </a>
+                
             </div>
             <div id="large_main_games_area">
                 <div id="main_search_area"></div>
@@ -85,6 +99,13 @@
             </div>
         </div>
     </div>
+    <center>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <i>There's nothing at the end lil bro...</i>
+
+        <br><br>
+    </center>
     
 </body>
 
@@ -100,6 +121,12 @@ const gameList = [{
     "id":"FanClicker",
     "display_name":"Fan Clicker",
     "description":`Fan Clicker is a clicker game where your goal is to make the fan spin<br>as fast as possible. You can buy upgrades during your gameplay<br>The original game can also be <strong>played</strong> <a href="https://www.construct.net/en/free-online-games/fan-clicker-49213/play">here</a>`
+},
+{
+    "id":"FanClicker2",
+    "display_name":"Fan Clicker 2",
+    "description":`🚧🔨Working in progress🏗️👀`,
+    "disabled":true
 },
 {
     "id":"FrogGame",
@@ -152,15 +179,27 @@ const gameList = [{
     "id":"DDLC",
     "display_name":"Doki Doki Literature Club!",
     /*
-    "description":"Welcome to the Literature Club! It's always been a dream of mine to make something special out of the<br> things I love. Now that you're a club member, you can help me make that dream come true in this<br> cute game!<br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",
-    */
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",
-    "disabled":true
+    */
+    "description":"Welcome to the Literature Club! It's always been a dream of mine to make something special out of the<br> things I love. Now that you're a club member, you can help me make that dream come true in this<br> cute game!<br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",
+    "disabled":false
+},
+{
+    "id":"Doors",
+    "display_name":"Michealslop Doors",
+    "description":"A parody of <a href=\"https://en.wikipedia.org/wiki/Microsoft_Windows\">Microsoft&reg; Windows&trade;</a> created by Fog",
+    "disabled":false
 },
 {
     "id":"N64Wasm",
     "display_name":"WASM Nintedo 64 emulator",
     "description":"A web based N64 Emulator by @nbarkhina on GitHub",
+    "disabled":false
+},
+{
+    "id":"JSDOS",
+    "display_name":"JS-DOS | x86 Computer Emulator",
+    "description":"x86 emulator written in JavaScript and WASM",
     "disabled":false
 },
 {
@@ -173,12 +212,6 @@ const gameList = [{
     "id":"PetsFight",
     "display_name":"Pet's Fight",
     "description":`Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!`
-},
-{
-    "id":"SkebobClicker",
-    "display_name":"Skebob Clicker",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
 },
 {
     "id":"GeometryDashLite",
@@ -259,6 +292,12 @@ const gameList = [{
     "display_name":"Toilet Wars PC",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
     "disabled":true
+},
+{
+    "id":"CookieClicker",
+    "display_name":"Cookie Clicker",
+    "description":"A classic by Orteil",
+    "disabled":false
 },
 {
     "id":"FNAF1",
@@ -360,6 +399,12 @@ const gameList = [{
     "disabled":false
 },
 {
+    "id":"Minesweeper",
+    "display_name":"Minesweeper",
+    "description":" ",
+    "disabled":false
+},
+{
     "id":"InteractiveBuddy",
     "display_name":"Interactive Buddy",
     "description":" ",
@@ -424,7 +469,7 @@ let val = Math.floor(Math.random()*5);
 setTimeout(() => {
     const adsImgs = document.getElementsByClassName("ad_img");
     for(let i=0;i<adsImgs.length;i++){
-        adsImgs[i].src = `./Assets/Images/Ads/${(val+i)%5}.png`;
+        adsImgs[i].src = `./Assets/Images/Ads/${(val+i)%11}.png`;
     }
 }, 100);
 
@@ -437,13 +482,25 @@ setTimeout(() => {
     align-content: normal;
     height:max-content;
     margin: 0;
-    background-color: #07032c;
+    background-color: #1d1d1d;
     background-size: 10px;
     background-repeat: repeat;
     overflow-y: scroll;
     font-size:medium;
     color: #ffffff;
     font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .FogstuffLogoContainer{
+        display: block;
+        width: 100%;
+    }
+
+    .FogstuffLogo{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
     }
 
     .main_div{
@@ -464,7 +521,7 @@ setTimeout(() => {
     
     #left_ad_area{
         position: absolute;
-        width: 250px;
+        width: 260px;
         height: fit-content;
     }
 
@@ -475,7 +532,7 @@ setTimeout(() => {
     #right_ad_area{
         position: absolute;
         right: 0px;
-        width: 250px;
+        width: 260px;
         height: max-content;
     }
 
@@ -498,10 +555,6 @@ setTimeout(() => {
         cursor: pointer;
     }
 
-    #svg_top_logo{
-        width: 200px;
-    }
-
     .game_card_area_div{
         border-radius: 5px;
         display: flex;
@@ -519,7 +572,12 @@ setTimeout(() => {
     
 
     .top_area{
-        background-color: #08061a;
+        background-color: #161617;
+    }
+
+    marquee{
+        background-color: rgb(15, 15, 15);
+        color: white;
     }
 
     .game_card_icon_img{
@@ -529,6 +587,7 @@ setTimeout(() => {
         margin-left: auto;
         margin-right: auto;
         border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     }
 
     .game_card_description_div{
@@ -546,17 +605,38 @@ setTimeout(() => {
     }
 
     .game_card_play_button{
-        border-radius: 10px;
+        border-radius: 2px;
         border: none;
-        background-color: rgb(56, 157, 252);
-        color: white;
+        background-color: rgb(226, 226, 226);
+        color: rgb(0, 0, 0);
         width: 120px;
         position: relative;
         left: 0px;
         bottom: 0px;
-        font-family:cursive;
+        font-family: 'Segoe UI', cursive, 'Comic Sans MS', Arial, Helvetica;
         font-size: large;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     }
+
+    .game_card_play_button:disabled{
+        background-color: rgb(66, 66, 66);
+        color: rgb(193, 193, 193);
+    }
+    
+    .game_card_play_button:hover{
+        background-color: rgb(138, 138, 138);
+    }
+
+    #top_area_buttons{
+        background-color: #161617;
+        display: flex;
+        position: relative;
+    }
+
+    #top_area_buttons button{
+        margin-bottom: 10px;
+    }
+
 
     .game_card_icon_image_area{
         align-items: center;
@@ -566,7 +646,7 @@ setTimeout(() => {
     }
 
     #main_games_scrolling_area{
-        background-color: #0d0744;
+        background-color: #28282a;
         width: 820px;
         height: 100%;
         display:block;
@@ -576,11 +656,12 @@ setTimeout(() => {
     }
 
     .selectable_tab_button{
+        display: flex;
         border-radius: 10px;
         border: none;
         padding-left: 10px;
         padding-right: 10px;
-        background-color: rgb(56, 157, 252);
+        background-color: rgb(29, 35, 57);
         color: white;
         height: 25px;
         font-weight: bold;
