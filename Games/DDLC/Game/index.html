@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Google</title>
-        <link rel="icon" href="//www.gstatic.com/images/branding/searchlogo/ico/favicon.ico">
-        <meta name="description" content="Doki Doki">
+        <title>Doki Doki Literature Club!</title>
+        <link rel="icon" href="./Icon.png">
+        <meta name="description" content="DDLC ported to HTML5">
         <link rel="js_asset" href="./Characters/sayori.chr">
     </head>
 
     <body>
         <div id="main_area">
             <canvas id="main_game_canvas">
-                <big>Your browser does not support HTML5 canvas.
-                HTML4 version coming soon...!</big>
+                <big>Your browser does not support HTML5 canvas.</big>
             </canvas>
         </div>
         <div id="extra_content">
@@ -72,19 +71,19 @@
     }
     #player_name_prompt{
         position: relative;
-        font-family: 'Menu', 'Cursive', 'Arial', 'Verdana';
+        font-family: 'DDLCFont','Arial', 'Verdana';
+        font-weight: bold;
         color: white;
         outline: none;
         font-size:x-large;
-        border: 1px solid #ffffff;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: rgb(252, 60, 204);
+        border: 0px solid #ffffff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(19, 14, 18);
         -webkit-text-fill-color: white; 
         text-align: center;
         width: 230px;
-        height: 30px;
-        margin-top: auto;
-        margin-bottom: auto;
+        height: 27px;
+        top: calc(50% - 40px);
         margin-left: auto;
         margin-right: auto;
         background: none;

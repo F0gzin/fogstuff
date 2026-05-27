@@ -19,6 +19,10 @@
         </center>
     </noscript>
     
+    <canvas id="CanvasBg">
+        update dat damn browse ur lazy beach.    
+    </canvas>
+
     <div class="main_div">
         <div class="top_area">
             <a class="FogstuffLogoContainer" href="https://f0gzin.github.io/fogstuff/">
@@ -50,6 +54,7 @@
             </div>
         </div>
         <div class="center_area">
+            <!--
             <div id="left_ad_area">
                 <a class="ad_a" href="./Errors/AdNotFound/">
                     <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
@@ -89,8 +94,8 @@
                 <a class="ad_a" href="./Errors/AdNotFound/">
                     <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
                 </a>
-                
             </div>
+            -->
             <div id="large_main_games_area">
                 <div id="main_search_area"></div>
                 <div id="main_games_scrolling_area">
@@ -102,7 +107,7 @@
     <center>
         <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-        <i>There's nothing at the end lil bro...</i>
+        <i>Background animation by <a href="https://www.dwitter.net/u/joeytwiddle">@joeytwiddle</a></i>
 
         <br><br>
     </center>
@@ -110,7 +115,25 @@
 </body>
 
 <script>
+const c = document.getElementById("CanvasBg");
+const x = c.getContext("2d");
+let t = 0;
+let C = Math.cos;
+let S = Math.sin;
+setInterval(() => {
+    t+=0.1;
+    c.height = 500;
+    function _(){
+        x.fillStyle = "rgb(255,255,255)";
+        x.fillRect(
+        512+50*X/Z,
+        120*(5+S(2*Z-t)+C(X/5+t))/Z,
 
+        W=(6+F*6)/Z,
+        W)
+    }
+    for(i=c.width=1e3;i--;_())X=i%32-16,Z=i/256,F=(Z-1.5-C(t))**2,x.globalAlpha=.1/F
+}, 40);
 const scrollingArea = document.getElementById("main_games_scrolling_area");
 const gameList = [{
     "id":"Eaglercraft",
@@ -490,6 +513,20 @@ setTimeout(() => {
     color: #ffffff;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     }
+    a:visited{color:rgb(0, 140, 255);}
+    a:link{color:rgb(66, 198, 255);}
+
+    #CanvasBg{
+        background: linear-gradient(#1d1d1d,#000000);
+        z-index: -1;
+        display: inline-block;
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+    }
 
     .FogstuffLogoContainer{
         display: block;
@@ -510,7 +547,7 @@ setTimeout(() => {
     .ad_a{
         display: block;
         height: max-content;
-        margin-top: 10px;
+        margin-top: 50px;
     }
 
     .center_area{
@@ -521,7 +558,7 @@ setTimeout(() => {
     
     #left_ad_area{
         position: absolute;
-        width: 260px;
+        width: 210px;
         height: fit-content;
     }
 
@@ -532,7 +569,7 @@ setTimeout(() => {
     #right_ad_area{
         position: absolute;
         right: 0px;
-        width: 260px;
+        width: 210px;
         height: max-content;
     }
 
@@ -547,8 +584,8 @@ setTimeout(() => {
     .ad_img{
         top: 0px;
         display: block;
-        width: 250px;
-        height: 600px;
+        width: 200px;
+        height: 540px;
     }
 
     button{
@@ -586,7 +623,7 @@ setTimeout(() => {
         width:120px;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 5px;
+        border-radius: 8px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     }
 
@@ -646,13 +683,16 @@ setTimeout(() => {
     }
 
     #main_games_scrolling_area{
-        background-color: #28282a;
+        background-color: rgba(40,40,42,0.5);
         width: 820px;
         height: 100%;
         display:block;
         margin-left: auto;
         margin-right: auto;       
         z-index: 10; 
+        box-shadow: 0px 0px 40px #525252;
+        background-color: rgba(40,40,42, 0.3);
+        backdrop-filter: blur(10px);
     }
 
     .selectable_tab_button{
