@@ -32,7 +32,7 @@ document.addEventListener('fullscreenchange', (e)=>{
     }
 });
 
-let val = Math.floor(Math.random()*5);
+let val = Math.floor(Math.random()*11);
 
 setTimeout(() => {
     const adsImgs = document.getElementsByClassName("ad_img");

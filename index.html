@@ -109,7 +109,13 @@
 
         <i>Background animation by <a href="https://www.dwitter.net/u/joeytwiddle">@joeytwiddle</a></i>
 
-        <br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="ShowOnHoverOnly">
+            <a href="./SUPERSECRET/index.html">super secret easter egg <img style="display: inline;" src="./Assets/Images/Icons/trollface_x22.png"></a>
+        </div>
+        <div class="ShowOnHoverOnly">
+            <a href="./dokischibis">🤫</a>
+        </div>
     </center>
     
 </body>
@@ -203,6 +209,12 @@ const gameList = [{
     "display_name":"You VS Homer",
     "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/111530421351096/You-VS-Homer\">here</a>",
     "disabled":true
+},
+{
+    "id":"LineRiderBeta2",
+    "display_name":"Line Rider Beta 2",
+    "description":" ",
+    "disabled":false
 },
 {
     "id":"DDLC",
@@ -509,7 +521,7 @@ for(i=0;i<gameList.length;i++){
 }
 
 
-let val = Math.floor(Math.random()*5);
+let val = Math.floor(Math.random()*10);
 
 setTimeout(() => {
     const adsImgs = document.getElementsByClassName("ad_img");
@@ -535,6 +547,13 @@ setTimeout(() => {
     color: #ffffff;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     }
+    .ShowOnHoverOnly{
+        opacity: 0;
+    }
+    .ShowOnHoverOnly:hover{
+        opacity: 100%;
+    }
+
     a:visited{color:rgb(0, 140, 255);}
     a:link{color:rgb(66, 198, 255);}
 
