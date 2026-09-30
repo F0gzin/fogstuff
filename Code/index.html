@@ -1,196 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FogStuff</title>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <link rel="icon" href="../Assets/google_favicon.ico">
-    <meta name="description" content="Web games, hopefully unblocked 👍">
-    <link rel="stylesheet" href="../Css/Main.css">
+    <title>Google</title>
+    <link rel="stylesheet" href="../../Css/Main.css" >
 </head>
 <body>
-    <noscript id="NoScript">
-        <img src="../Assets/Images/Icons/report_x32.png" alt="&#9888;"><font color="red" size="+3"><b>!! JAVASCRIPT NOT ENABLED !!</b></font><img src="./Assets/Images/Icons/report_x32.png" alt="&#9888;"><br><b><i>Enable JavaScript in browser settings to proceed.</i></b> <br><button style="width:90px;cursor:pointer;"><a href="."><u><b>O</b></u>k</a></button>
-    </noscript>
-    
-    <div id="BackgroundContainer">
-        <canvas id="BackgroundCanvas" width="64" height="64"><font color="red">Your web browser does not support HTML5 canvas element.</font></canvas>
-    </div>
+    <header id="PageHeader">
+        <center>
+            <a href="../../">
+                <img id="PageLogo" src="../../Assets/Logo/White.svg" alt="FogStuff logo">
+            </a>
+        </center>
+        <marquee scrollamount="19">
+            <span>what u coding bro?</span>
+        </marquee>
+    </header>
+    <div>
+        <a href="../../Code#Tutorials">
+            <button>Tutorials</button>
+        </a>
+        <br>
+        <hr>
+        <span>
+            Here you can do web-dev shit, that is HTML5 (HTML, JS, CSS, WASM, WebGL etc.)<br>
+            But with none of this React bullcrap and a gazillion frameworks, thats OG plain HTML and JS just like god intented.<br>
+            Actually all of FogStuff was coded like that btw (except for the games obviously)
+        </span>
+        <br>
+        <hr>
+        <br>
+        <div id="ScriptAreaContainer">
+            <textarea id="CodeTextArea">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
 
-    <div id="PrimaryContentDiv">
-        <header id="PageHeader">
-            <center>
-                <a href="..">
-                    <img id="PageLogo" src="../Assets/Logo/White.svg" alt="FogStuff logo">
-                </a>
-            </center>
-            <marquee scrollamount="19">
-                <span>N E R D &nbsp;</span>
-                <span>N E R D &nbsp;</span>
-                <span>N E R D &nbsp;</span>
-                <span>N E R D &nbsp;</span>
-                <span>N E R D &nbsp;</span>
-                <span>N E R D &nbsp;</span>
-                <span>N E R D</span>
-            </marquee>
-        </header>
-        
-        <main id="Main">
+&lt;head&gt;
+   &lt;meta charset="utf-8"&gt;
+   &lt;title&gt;Webpage&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;div&gt;
+      &lt;h1&gt;WELCOME!&lt;/h1&gt;
+      this is my page ;)
+      &lt;br&gt;
+      &lt;button id="MyButton"&gt;test JavaScript&lt;/button&gt;
+   &lt;/div&gt;
+
+   &lt;script type="text/javascript"&gt;
+      var button = document.getElementById("MyButton");
+      button.onclick = function(){
+        alert("Hello, World!");
+      }
+   &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </textarea>
             
-            <div id="MainListSection">
-                <div id="ListScrollArea" style="height: calc(100% - 20px);">
-                    <center>
-                        <img alt="PC spinning" src="../Assets/Images/pc_spin.gif">
-                        <img alt="8088 CPU talking it's native language" src="../Assets/Images/8088_speaking.gif">
-                    </center>
-                    <h1>COMPUTER PROGRAMMING!</h1>
-                    <hr>
-                    <p>There's nothing better than programming, right?</p>
-                    <p>
-                        Programming is the art (?) of telling the computer what to do in order to create beautiful and well designed games or applications
-                    </p>
-                    <p>
-                        <big>Here in FogStuff we have everything you need to code shit.</big>
-                        <br>
-                        Like this simple web HTML5 IDE i made:
-                        <a href="./Ide/">
-                            <button>
-                                <big><u>Start coding!</u></big>
-                            </button>
-                        </a>
-                    </p>
-                    <hr>
-                    <h3 id="Tutorials">Tutorials:</h3>
-                    My tutorials (<i>much better btw</i>)
-                    <br>
-                    <i>graphics programming tutorials comming soon..!</i>
-                    <ul>
-                        <li><a href="./Basics">The basics of computing and programming</a></li>
-                        <li><a href="./Engines">What is an engine?</a></li>
-                        <li><a href="./Lua">Lua programming language</a></li>
-                        <li><a href="./C">C tutorials</a></li>
-                        <li><a href="./Network">Networking & APIs</a></li>
-                        <li><a href="./Html">Web development: HTML and CSS</a></li>
-                        <li><a href="./Js">JavaScript</a></li>
-                        <li><a href="./Canvas2d">Canvas2D </a></li>
-                    </ul>
-                    By other (<i>smarter</i>) people:
-                    <ul>
-                        <li><a href="https://developer.mozilla.org/pt-BR/">MDN - Mozilla tutorials for web dev</a></li>
-                        <li><a href="https://www.w3schools.com/">W3C School - Web development</a></li>
-                        <li><a href="https://www.w3schools.com/c/c_intro.php">W3C School - The C programming language</a></li>
-                        <li><a href="https://stackoverflow.com/questions">Stack Overflow - Programming forum</a></li>
-                    </ul>
-                    <hr>
-                    <h3>Coding Tools:</h3>
-                    <i>Notice: No AI is here because <u>no AI is needed</u></i>
-                    <ul>
-                        <li><a href="https://notepad-plus-plus.org/">Notepad++</a></li>
-                        <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
-                        <li><a href="https://www.python.org/">Python</a></li>
-                        <li><a href="https://sourceforge.net/projects/mingw/">MinGW - GNU utilities for Microsoft Windows &reg;</a></li>
-                        <li><a href="https://www.virtualbox.org/">Oracle VirtualBox</a></li>
-                        <li><a href="https://www.msys2.org/">MSYS2 - More Linux shit on Windows</a></li>
-                        <li><a href="https://www.oracle.com/java/technologies/downloads/">Java JDK</a></li>
-                    </ul>
-                    <hr>
-                    <h3>Bonus:</h3>
-                    <ul>
-                        <li><a href="./History">The history of computers</a></li>
-                        <li><a href="./Linux">Linux tutorials</a></li>
-                        <li><a href="./Windows">Using Windows and PowerShell</a></li>
-                        <li><font color="red">[WARNING: EVIL]</font> <a href="./Malware">Malware</a></li>
-                        <li><font color="red">[WARNING: EVIL]</font> <a href="./Hacking">Hacking</a></li>
-                    </ul>
-                    <br>
-                    <hr>
-                    <p>I hope you create wondeful things :)</p>
-                    <img alt="programming meme about indian guy tutorial" src="../Assets/Images/Meme1.jpg">
-                </div>
-            </div>
-        </main>
+        </div>
+        <hr>
+        <button id="RunButton">Run!</button>
     </div>
-    <footer>
-        FogStuff by Fog (@f0gzin on GitHub)<br>
-        <!--
-        <i>Background animation by <a href="https://www.dwitter.net/u/joeytwiddle">@joeytwiddle</a></i>
-        -->
-    </footer>
+    <style>
+        #ScriptAreaContainer{
+            display: block;
+        }
+
+        #CodeTextArea{
+            display: flex;
+            margin-left: 0;
+            margin-top: 0;
+            top: 0px;
+            z-index: 0;
+            width: 600px;
+            height: 600px;
+   
+        }
+
+    </style>
+    
+    <script type="application/javascript">
+        const button = document.getElementById("RunButton");
+        const textbox = document.getElementById("CodeTextArea");
+        button.onclick = function(ev){
+            const tab = window.open("", "_blank");
+            tab.document.write(textbox.value);
+            tab.document.close();
+        }
+    </script>
 </body>
-
-<style>
-    body{
-        height: fit-content;
-    }
-    Main{
-        height: fit-content;
-    }    
-</style>
-
-<script type="text/javascript">
-class Word{
-    x = 0;
-    y = 0;
-    z = 0;
-    text = "$"
-    constructor(){
-        this.y = -250 - (Math.random()*10);
-        this.x = (Math.floor(Math.random()*120)*10)-500;
-        this.z = (Math.random()*2)+0.5;
-        this.text = Math.random() <= 0.5 ? "0" : "1";
-    }
-}
-const listOfWords = [];
-const c = document.getElementById("BackgroundCanvas");
-const x = c.getContext("2d");
-let t = 0;
-let C = Math.cos;
-let S = Math.sin;
-let tck = 9;
-
-c.width = 1000;
-c.height = 500;
-
-setInterval(() => {
-    t+=0.1;
-    tck++;
-    c.height |= 0;
-    
-    x.fillStyle = "rgb(0,255,0)";
-    
-    for(let i=0; i<listOfWords.length; i++){
-        const word = listOfWords[i];
-        if(word.y>500){
-            listOfWords[i] = new Word(); // im praying that the GC understands what i want it to do
-        }
-        
-        x.globalAlpha=1.0 - (word.y/500);
-        word.y+=4;
-
-        x.font = `${Math.round(24/word.z)}px monospace`;
-        x.fillText(word.text, (word.x / word.z) + c.width*0.5, (word.y / word.z) + c.height*0.5);
-    }
-
-    if(tck >= 12 && listOfWords.length < 90){
-        for(let j=0; j<6; j++){
-            listOfWords.push(new Word());
-        }
-        tck = 0;
-    }
-
-    /*
-    function _(){
-        x.fillStyle = "rgb(255,255,255)";
-        x.fillRect(
-        512+50*X/Z,
-        120*(5+S(2*Z-t)+C(X/5+t))/Z,
-
-        W=(6+F*6)/Z,
-        W)
-    }
-    for(i=(1e3);i--;_())X=i%32-16,Z=i/256,F=(Z-1.5-C(t))**2,x.globalAlpha=.1/F;
-    */
-}, 40);
-</script>
-
 </html>
