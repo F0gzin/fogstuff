@@ -1,0 +1,6 @@
+[
+    {"action":"clear_all_chars"},
+    {"action":"music_stop","fadeout":"2.0"},
+    {"action":"set_bg","background":"residential_day"},
+    {"action":"js_eval","script":"console.log(\"%cJUST MONIKA\", \"color: red; font-size: 30px; font-weight: bold;\");"}
+]

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WebPivot Editor</title>
+        <meta charset="utf-8">
+		<link href="./icon.png" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Free web 2D pivot-based animation tool">
+    </head>
+    <body>
+        <noscript>
+            <h1><font color="red">Please enable JavaScript to proceed.</font></h1>
+        </noscript>
+        <div id="WindowTopBar">
+            <div id="TopBarFlex">
+                <button>File</button>
+                <button>Edit</button>
+                <button>View</button>
+                <button>Help</button>
+            </div>
+        </div>
+        <main>
+            <div id="LeftSidePanel">
+                <div id="LeftSidePanelContent">
+                    
+                </div>
+            </div>
+
+            <div id="MiddleCenterArea">
+                <div id="MiddleAreaConteiner">
+                    <div id="TopAreaConteiner">
+                        <div id="TopAreaFloating">
+                        
+                        </div>
+                    </div>
+
+                    <div id="AnimationScreenConteiner">
+                        <div id="AnimationScreenDiv">
+                            <canvas id="AnimationCanvas">
+                                <font color="white">Your web-browser does not support HTML5 canvas element.</font>
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        
+        <script defer>try{eval("let a = 2; const b = a * 2;");}catch(e){alert("This browser does not support EcmaScript 6");window.close();}</script>
+    </body>
+    <style>
+        body{
+            display: block;
+            margin: 0px;
+            font-size:medium;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            background-color: #111111;
+            height: 100vh;
+            overflow:hidden;
+            margin-top:0px;
+            margin-left:0px;
+        }
+        button{
+            cursor: pointer;
+        }
+        #LeftSidePanelContent{
+            width: calc(100% - 10px);
+            height: calc(100% - 14px);
+            margin-left: 5px;
+            margin-top: 7px;
+        }
+        #WindowTopBar{
+            width: 100%;
+            height: 28px;
+            background-color: #1f1f1f;
+        }
+        #TopBarFlex{
+            height: 100%;
+            display: flex;
+        }
+        #TopBarFlex button{
+            -webkit-user-select: none; /* Safari */
+            user-select: none;
+            display: inline-block;
+            color: white;
+            border: 0px;
+            background-color: transparent;
+            height: 100%;
+            width: 60px;
+            display: flexbox;
+            /*border-radius: 3px;*/
+            font-size: large;
+        }
+        #TopBarFlex button:hover{
+            background-color: #636363;
+            z-index:20;
+        }
+        #TopAreaConteiner{
+            display: flex;
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 100%;
+            height: 200px;
+            z-index: 20;
+        }
+        #TopAreaFloating{
+            display: flex;
+            position: relative;
+            margin-left: auto;
+            border-radius: 8px;
+            margin-right: auto;
+            margin-top: 5px;
+            background-color: #272727;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            width: calc(100% - 20px);
+            height: 100px;
+            z-index: 20;
+        }
+        #AnimationCanvas{
+            margin-top:0px;
+            margin-left:0px;
+            position:relative;
+            width:100%;
+            height:100%;
+            background-color:rgb(255, 0, 255);
+            color: white;
+        }
+        #AnimationScreenConteiner{
+            width: 100%;
+            height: 100%;
+            margin-top: 0px;
+            margin-left: 0px;
+            position: absolute;
+        }
+        #AnimationScreenDiv{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 11%;
+            width: 800px;
+            height: 600px;
+        }
+        main{
+            height: calc(100% - 28px);
+            display: flex;
+        }
+        #LeftSidePanel{
+            display: inline-block !important;
+            position: relative;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 400px;
+            height: 100%;
+        }
+        #MiddleAreaConteiner{
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #MiddleCenterArea{
+            display: inline-block;
+            position: relative;
+            margin-top: 0px;
+            flex: 1;
+            height: 100%;
+        }
+    </style>
+</html>

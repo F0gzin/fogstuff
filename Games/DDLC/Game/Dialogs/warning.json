@@ -1,0 +1,7 @@
+[
+    {"action":"set_bg","background":"warning"},
+    {"action":"dialog","char":"$NULL","text":"This is a port of the game Doki Doki Literature Club! for HTML5 created by Fog. This has NO association with Team Salvato and is NOT an official product."},
+    {"action":"dialog","char":"$NULL","text":"This game is not suitable for children or those who are easily disturbed."},
+    {"action":"dialog","char":"$NULL","text":"By continuing you confirm you are over 13 and consent exposing yourself to sensitive content."},
+    {"action":"go_to_menu"}
+]

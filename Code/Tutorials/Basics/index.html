@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FogStuff</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="icon" href="../Assets/google_favicon.ico">
+    <meta name="description" content="Web games, hopefully unblocked 👍">
+    <link rel="stylesheet" href="../Css/Main.css">
+</head>
+<body>
+    <noscript id="NoScript">
+        <img src="../Assets/Images/Icons/report_x32.png" alt="&#9888;"><font color="red" size="+3"><b>!! JAVASCRIPT NOT ENABLED !!</b></font><img src="./Assets/Images/Icons/report_x32.png" alt="&#9888;"><br><b><i>Enable JavaScript in browser settings to proceed.</i></b> <br><button style="width:90px;cursor:pointer;"><a href="."><u><b>O</b></u>k</a></button>
+    </noscript>
+    
+    <div id="BackgroundContainer">
+        <canvas id="BackgroundCanvas" width="64" height="64"><font color="red">Your web browser does not support HTML5 canvas element.</font></canvas>
+    </div>
+
+    <div id="PrimaryContentDiv">
+        <header id="PageHeader">
+            <center>
+                <a href="..">
+                    <img id="PageLogo" src="../Assets/Logo/White.svg" alt="FogStuff logo">
+                </a>
+            </center>
+            <marquee scrollamount="19">
+                <span>NNEEERRRRDDDDDDDDDDDDD</span>
+            </marquee>
+        </header>
+        
+        <main id="Main">
+            
+            <div id="MainListSection">
+                <div id="ListScrollArea" style="height: calc(100% - 20px);">
+                    <h1>PROGRAMMING!</h1>
+                    <hr>
+                    <p>There's nothing better than programming, right?</p>
+                    <p>
+                        Programming is the art (?) of telling the computer what to do in order to create beautiful and well designed games or applications
+                    </p>
+                    <p>
+                        <b>But how does programming work?</b><br>
+                        Well, computers do not speak a language like me and you (<i>unless your talking about LLM AIs, fuck AI</i>)<br>
+                        Computers are machines made of souless silicon that execute logic and (<i>kinda of</i>) mathematical operations<br>
+                        So in order to create something like a game you need to translate the rules of the game into math and logic.
+                        <b>Sounds boring and hard?</b> Because it is for 99% of sane people, but somehow insane people like me find it fun.
+                        <br><br>
+                        <img src="../Assets/Images/8088_speaking.gif">
+                        
+                        <hr>
+                        <h2>How does that work?</h2>
+                        <p>Great question!</p>
+                        <p>See, computers are just pieces of circuit in a square of 99.9902% pure silicion</p>
+                        <p>But circuits don't change, so you would need a different circuit for every program, and that <b>does not</b> scale</p>
+                        <p>
+                            So the nerds had a great idea: the CPU would have a bunch of prebuilt operations in the circuits, and programs would
+                            be built using them, activating the right circuits at the right order.
+                            And that is called an instruction-set or architecture <small>(<i>they are different things but aren't at the same time and i'm too lazy do explain</i>)</small>
+                        </p>
+                        <p>
+                            But people quickly realized that writing raw instructions by their binary code (the zeros and ones) is extremely tedious, prone to human error and horrible for later changes in code.
+                            People tried to make machine code more legible by creating something called Assembly (which is often considered the first programming language) 
+                        </p>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        FogStuff by Fog (@f0gzin on GitHub)<br>
+        <i>Background animation by <a href="https://www.dwitter.net/u/joeytwiddle">@joeytwiddle</a></i>
+    </footer>
+</body>
+
+<style>
+    body{
+        height: fit-content;
+    }
+    Main{
+        height: fit-content;
+    }    
+</style>
+
+<script type="text/javascript">
+const c = document.getElementById("BackgroundCanvas");
+const x = c.getContext("2d");
+let t = 0;
+let C = Math.cos;
+let S = Math.sin;
+setInterval(() => {
+    t+=0.1;
+    c.height = 500;
+    function _(){
+        x.fillStyle = "rgb(255,255,255)";
+        x.fillRect(
+        512+50*X/Z,
+        120*(5+S(2*Z-t)+C(X/5+t))/Z,
+
+        W=(6+F*6)/Z,
+        W)
+    }
+    for(i=c.width=1e3;i--;_())X=i%32-16,Z=i/256,F=(Z-1.5-C(t))**2,x.globalAlpha=.1/F
+}, 40);
+</script>
+
+</html>

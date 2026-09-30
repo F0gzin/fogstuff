@@ -1,127 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google</title>
+    <meta charset="utf-8">
+    <title>FogStuff</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="icon" href="Assets/google_favicon.ico">
     <meta name="description" content="Web games, hopefully unblocked 👍">
+    <link rel="stylesheet" href="./Css/Main.css">
 </head>
-
 <body>
-    <noscript style="z-index: 1000; width: 100%; height: 100%; position: fixed; background-color: #07032c;">
-        <center>
-            <h1>⚠️ - Please enable JavaScript to proceed. - ⚠️</h1>
-            <p>
-                In Chrome, open settings, go to Security --&gt; JavaScript --&gt; click on Allow JavaScript
-            </p>
-        </center>
+    <noscript id="NoScript">
+        <img src="./Assets/Images/Icons/report_x32.png" alt="&#9888;"><font color="red" size="+3"><b>!! JAVASCRIPT NOT ENABLED !!</b></font><img src="./Assets/Images/Icons/report_x32.png" alt="&#9888;"><br><b><i>Enable JavaScript in browser settings to proceed.</i></b> <br><button style="width:90px;cursor:pointer;"><a href="."><u><b>O</b></u>k</a></button>
     </noscript>
     
-    <canvas id="CanvasBg">
-        update dat damn browse ur lazy beach.    
-    </canvas>
-
-    <div class="main_div">
-        <div class="top_area">
-            <a class="FogstuffLogoContainer" href="https://f0gzin.github.io/fogstuff/">
-                <img class="FogstuffLogo" id="svg_top_logo" src="Assets/Logo/White.svg" alt="FogStuff logo">
+    <div id="BackgroundContainer">
+        <canvas id="BackgroundCanvas" width="64" height="64"><font color="red">Your web browser does not support HTML5 canvas element.</font></canvas>
+    </div>
+    <div id="PrimaryContentDiv">
+        <header id="PageHeader">
+            <center>
+                <a href=".">
+                    <img id="PageLogo" src="./Assets/Logo/White.svg" alt="FogStuff logo">
+                </a>
+            </center>
+            <marquee scrollamount="19">
+                <span>Unblocked web-games to waste time in school's computer lab instead of doing work...</span>
+            </marquee>
+        </header>
+        <nav id="NavigationSection">
+            <a href=".">
+                <button>Main page</button>
             </a>
-            <div style="display: inline;">
-                <!--<img style="display: inline; image-rendering: pixelated; float: right;" src="./Assets/Gifs/under construction.gif">-->
-                <p><marquee scrollamount="22"><span>Cool unblocked web-games to waste time in school's computer lab instead of doing work..</span></marquee></p>
-            </div>
-            <div id="top_area_buttons">
-                <button class="selectable_tab_button" style="background-color: rgb(58, 110, 178); color: rgb(224, 255, 255);">🎮Web Games</button>
-                <div style="width: 5px;"></div>
-                <a href="./Links"><button class="selectable_tab_button">🌐Links</button></a>
-                <div style="width: 5px;"></div>
-                <a href="./About"><button class="selectable_tab_button">📃About</button></a>
-                <div style="width: 5px;"></div>
-                <a href="./Projects"><button class="selectable_tab_button">🤓Engines and shi</button></a>
-                <div style="width: 5px;"></div>
-                <a href="./Downloads"><button class="selectable_tab_button">📥Downloadable Games</button></a>
-                <div style="width: 5px;"></div>
-                <a href="./Emulators"><button class="selectable_tab_button">👾Emulators</button></a>
-                <div style="width: 5px;"></div>
-                <a href="./Proxys"><button class="selectable_tab_button">🎭Proxys</button></a>
-                <div style="width: 5px;"></div>
-                <a href="./Chatrooms"><button class="selectable_tab_button">💬Chatrooms</button></a>
-                <div style="width: 5px;"></div> 
-                <a href="./Create"><button class="selectable_tab_button">🔨Create</button></a>
-                <div style="width: 5px;"></div> 
-            </div>
-        </div>
-        <div class="center_area">
-            <!--
-            <div id="left_ad_area">
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/AdTemplate.png">
-                </a>
-            </div>
-            <div id="right_ad_area">
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-                <a class="ad_a" href="./Errors/AdNotFound/">
-                    <img class="ad_img" src="./Assets/Images/Ads/AdTemplate.png">
-                </a>
-            </div>
-            -->
-            <div id="large_main_games_area">
-                <div id="main_search_area"></div>
-                <div id="main_games_scrolling_area">
-
+            <a href="./Links/">
+                <button>Links</button>
+            </a>
+            <a href="./AiChat/">
+                <button>A.I. Chatbot</button>
+            </a>
+            <a href="./Code/">
+                <button>Code</button>
+            </a>
+        </nav>
+        <main id="Main">
+            <search id="SearchBarSection">
+                <input id="GameSearchBar" type="search" title="Search here!">
+                <button onclick="alert('&#129344;')" id="GameSearchButton">
+                    &#128269;
+                </button>
+            </search>
+            <div id="MainListSection">
+                <div id="ListScrollArea" style="height: calc(100% - 20px);">
+                    <div style="display: inline-flexbox; height: 100%; width: 100%; align-content: center;">
+                        <img style="display: flex; width: 96px; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto; cursor: wait;" src="./Assets/Images/Spinning.apng" alt="Loading...">
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
-    <center>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+    <footer>
+        FogStuff by Fog (@f0gzin on GitHub)<br>
         <i>Background animation by <a href="https://www.dwitter.net/u/joeytwiddle">@joeytwiddle</a></i>
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="ShowOnHoverOnly">
-            <a href="./SUPERSECRET/index.html">super secret easter egg <img style="display: inline;" src="./Assets/Images/Icons/trollface_x22.png"></a>
+        <div>
+            <a class="OnlyShownOnHover" href="./Secret">👀 Super secret easter egg 🤫<img src="./Assets/Images/Icons/trollface_x22.png"></a>
         </div>
-        <div class="ShowOnHoverOnly">
-            <a href="./dokischibis">🤫</a>
-        </div>
-    </center>
-    
+    </footer>
 </body>
-
-<script>
-const c = document.getElementById("CanvasBg");
+<script type="module" src="./Assets/Scripts/Main.js"></script>
+<script type="text/javascript">
+const c = document.getElementById("BackgroundCanvas");
 const x = c.getContext("2d");
 let t = 0;
 let C = Math.cos;
@@ -140,614 +86,6 @@ setInterval(() => {
     }
     for(i=c.width=1e3;i--;_())X=i%32-16,Z=i/256,F=(Z-1.5-C(t))**2,x.globalAlpha=.1/F
 }, 40);
-const scrollingArea = document.getElementById("main_games_scrolling_area");
-const gameList = [{
-    "id":"Eaglercraft",
-    "display_name":"Minecraft <small>(Eaglercraft)</small>",
-    "description":`Good old Minecraft ported to JS by <a href="https://github.com/lax1dude">Lax1dude</a>.<br>Supports version 1.5.2, 1.8 and 1.12.2<br>Only 1.8 and 1.5.2 supports multiplayer.<br>The original game can also be <strong>downloaded</strong> <a href="https://www.minecraft.net/pt-br">here</a>`,
-},
-{
-    "id":"FanClicker",
-    "display_name":"Fan Clicker",
-    "description":`Fan Clicker is a clicker game where your goal is to make the fan spin<br>as fast as possible. You can buy upgrades during your gameplay<br>The original game can also be <strong>played</strong> <a href="https://www.construct.net/en/free-online-games/fan-clicker-49213/play">here</a>`
-},
-{
-    "id":"FanClicker2",
-    "display_name":"Fan Clicker 2",
-    "description":`🚧🔨Working in progress🏗️👀`,
-    "disabled":true
-},
-{
-    "id":"FrogGame",
-    "display_name":"The Impossible Frog Game!",
-    "description":`Frog Game is a rage-game platformer where you control a tiny little froggy<br><b>Supports local multiplayer!</b><br>Can you speedrun it?<br>The original game can be <strong>played</strong> <a href="https://www.construct.net/en/free-online-games/impossible-frog-game-63816/play">here</a>`
-},
-{
-    "id":"Doom",
-    "display_name":"Doom [Emulated]",
-    "description":"Classic Doom emulated with JS-Box 🔥",
-    "disabled":false
-},
-{
-    "id":"CS1.6",
-    "display_name":"Counter Strike 1.6",
-    "description":"CS 1.6 ported to browser! Original port <a href=\"https://play-cs.com/pt/servers\">here</a>",
-    "disabled":false
-},
-{
-    "id":"XtremeObstacleCourse",
-    "display_name":"Xtreme Obstacle Course",
-    "description":"Game created by the youtuber @Lawnchooks",
-    "disabled":false
-},
-{
-    "id":"BaldisBasics",
-    "display_name":"Baldi's Basics in Education and Learning",
-    "description":"Baldi's Basics is a meta horror game that's really weird, with no real educational value to be found.<br>Collect all 7 of the notebooks and escape the school, all while avoiding Baldi",
-    "disabled":false
-},
-{
-    "id":"GenericRoleplayGame",
-    "display_name":"Generic Roleplay Game",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>Farm crops, chop wood, and contribute to the town economy!<br>Become a guard, maybe a doctor, or a president!<br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/4598019433/generic-roleplay-gaem\">here</a>",
-    "disabled":true
-},
-{
-    "id":"FogsAdmin",
-    "display_name":"Fog's Admin [Roblox edition]",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/75691964665725/Fogs-Admin\">here</a>",
-    "disabled":true
-},
-{
-    "id":"FogsAdminCS",
-    "display_name":"Fog's Admin [C#/.NET Edition]",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/75691964665725/Fogs-Admin\">here</a>",
-    "disabled":true
-},
-{
-    "id":"YouVsHomer",
-    "display_name":"You VS Homer",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>The original game can be <strong>played</strong> <a href=\"https://www.roblox.com/games/111530421351096/You-VS-Homer\">here</a>",
-    "disabled":true
-},
-{
-    "id":"LineRiderBeta2",
-    "display_name":"Line Rider Beta 2",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"DDLC",
-    "display_name":"Doki Doki Literature Club!",
-    /*
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",
-    */
-    "description":"Welcome to the Literature Club! It's always been a dream of mine to make something special out of the<br> things I love. Now that you're a club member, you can help me make that dream come true in this<br> cute game!<br><small><i>The original game can be <strong>played</strong> <a href=\"https://store.steampowered.com/agecheck/app/698780/\">here</a></i></small>",
-    "disabled":false
-},
-{
-    "id":"DDKK",
-    "display_name":"Doki Doki Kombat Klub",
-    "description":"<a href=\"https://damiondamaske.itch.io/doki-doki-kombat-klub\">original game here</a><img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"GrannyShooter",
-    "display_name":"Granny Shooter",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"Doors",
-    "display_name":"Michealslop Doors",
-    "description":"A parody of <a href=\"https://en.wikipedia.org/wiki/Microsoft_Windows\">Microsoft&reg; Windows&trade;</a> created by Fog",
-    "disabled":false
-},
-{
-    "id":"N64Wasm",
-    "display_name":"WASM Nintedo 64 emulator",
-    "description":"A web based N64 Emulator by @nbarkhina on GitHub",
-    "disabled":false
-},
-{
-    "id":"JSDOS",
-    "display_name":"JS-DOS | x86 Computer Emulator",
-    "description":"x86 emulator written in JavaScript and WASM",
-    "disabled":false
-},
-{
-    "id":"FogsPaint",
-    "display_name":"Fog's Paint",
-    "description":"draw shi",
-},
-{
-    "id":"FireBoyAndWaterGirl",
-    "display_name":"Fire Boy and Water Girl",
-    "description":"CLASSIC FLASH GAEM",
-},
-{
-    "id":"PetsFight",
-    "display_name":"Pet's Fight",
-    "description":`Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!`
-},
-{
-    "id":"GeometryDashLite",
-    "display_name":"Geometry Dash JS",
-    "description":"Ported by @Soteris24 on GitHub",
-    "disabled":false
-},
-{
-    "id":"GeometryDashScratch",
-    "display_name":"Geometry Dash (Scratch version)",
-    "description":"Geometry Dash ported to Scratch.",
-    "disabled":false
-},
-{
-    "id":"PVZ1",
-    "display_name":"Plants VS Zombies 1",
-    "description":"Tower defence classic by PopCap. Port by PorkGames.",
-},
-{
-    "id":"GTAVC",
-    "display_name":"Grand Theft Auto: Vice City",
-    "description":"emulated with JS-DOS"
-},
-{
-    "id":"BirdGame",
-    "display_name":"Bird Game (by Fog)",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"ZumbiBlocks",
-    "display_name":"Zumbi Blocks",
-    "description":"game by Adrian Kaminski<br><img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"SlitherIO",
-    "display_name":"Slither.IO",
-    "description":"Original game <a href=\"http://slither.com/io\">here!</a>"
-},
-{
-    "id":"FallingSand",
-    "display_name":"Falling Sand",
-    "description":"Original game <a href=\"https://boredhumans.com/falling_sand.php\">here!</a>"
-},
-{
-    "id":"StickmanSandbox",
-    "display_name":"Stickman Sandbox",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"GarrysMod",
-    "display_name":"Garry's Mod",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"CrazyCattle3D",
-    "display_name":"Crazy Cattle 3D",
-    "description":"Fight other sheep! fake multiplayer :P",
-    "disabled":false
-},
-{
-    "id":"PapasBurgeria",
-    "display_name":"Papa's Burgeria",
-    "description":"A Flash classic. Work at a burgeria.",
-    "disabled":false
-},
-{
-    "id":"Factorio",
-    "display_name":"Factorio",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"ToiletWars",
-    "display_name":"Toilet Wars PC",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"CookieClicker",
-    "display_name":"Cookie Clicker",
-    "description":"A classic by Orteil",
-    "disabled":false
-},
-{
-    "id":"FNAF1",
-    "display_name":"Five Nights at Freddy's",
-    "description":"Ported by @irv77",
-},
-{
-    "id":"FNAF2",
-    "display_name":"Five Nights at Freddy's 2",
-    "description":"Thanks Scott and thanks @irv77",
-    "disabled":false
-},
-{
-    "id":"FNAF3",
-    "display_name":"Five Nights at Freddy's 3",
-    "description":"Thanks Scott and thanks @irv77",
-    "disabled":false
-},
-{
-    "id":"FNAF4",
-    "display_name":"Five Nights at Freddy's 4",
-    "description":"Thanks Scott and thanks @irv77",
-    "disabled":false
-},
-{
-    "id":"FNAF5",
-    "display_name":"Five Nights at Freddy's: Sister Location",
-    "description":"Thanks Scott and thanks @irv77",
-    "disabled":false
-},
-{
-    "id":"FNAF6",
-    "display_name":"Five Nights at Freddy's 6: Freddy Fazbear's Pizzeria Simulator",
-    "description":"Thanks Scott and thanks @irv77",
-    "disabled":false
-},
-{
-    "id":"UCN",
-    "display_name":"Five Nights at Freddy's: Ultimate Custom Night",
-    "description":"UCN, Ported by @irv77",
-},
-{
-    "id":"FNAW",
-    "display_name":"Five Nights at Winston's",
-    "description":"Game about baby winston and being hunted by erasers.<br>This game is takes place at Lax1dude's school. You play as the janitor.<br>Original game <a href=\"https://g.deev.is/fnaw/\">here!</a>",
-},
-{
-    "id":"FNAE",
-    "display_name":"Five Nights at Epstein's",
-    "description":"W game",
-    "disabled":false
-},
-{
-    "id":"ClubPenguin",
-    "display_name":"Club Penguin",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"Portal",
-    "display_name":"Portal 1",
-    "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
-    "disabled":true
-},
-{
-    "id":"ThrowAPotato",
-    "display_name":"Throw a Potato 1",
-    "description":"Original game <a href=\"https://www.construct.net/en/free-online-games/throw-potato-27703/play?via=mh\">here</a>",
-    "disabled":false
-},
-{
-    "id":"EscapingThePrison",
-    "display_name":"Henry Stickmin: Escaping the Prison",
-    "description":"Classic Flash game.",
-    "disabled":false
-},
-{
-    "id":"DuckLife",
-    "display_name":"Duck Life",
-    "description":"Classic Flash game.",
-    "disabled":false
-},
-{
-    "id":"DuckLife2",
-    "display_name":"Duck Life 2",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"BloonsClassic",
-    "display_name":"Bloons Classic",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"BloonsTD5",
-    "display_name":"Bloons Tower Defence 5",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"Minesweeper",
-    "display_name":"Minesweeper",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"InteractiveBuddy",
-    "display_name":"Interactive Buddy",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"SugarSugar",
-    "display_name":"Sugar Sugar",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"PortalFlash",
-    "display_name":"Portal Flash",
-    "description":" ",
-    "disabled":false
-},
-{
-    "id":"PortalScratch",
-    "display_name":"Portal 3D (Scratch edition)",
-    "description":"game by @Chooper100",
-    "disabled":false
-},
-{
-    "id":"ScratchBloonsTD",
-    "display_name":"Scratch Bloons TD",
-    "description":"game by @ggenije",
-    "disabled":false
-},
-
-
-];
-
-for(i=0;i<gameList.length;i++){
-    const gameData = gameList[i];
-    let newDocData = `
-<div class="game_card_area_child">
-    <div class="game_card_icon_image_area">
-        <img class="game_card_icon_img" src="Assets/GameImages/${gameData.id}.png">
-        </div>
-            <div class="game_card_description_div">
-            <strong class="game_card_description_title">${gameData.display_name}</strong>
-            <div class="game_card_description_text">
-            <span>
-                ${gameData.description}
-            </span>
-            <br>
-        </div>
-        ${gameData.disabled? "<button disabled style=\"font-size:16px;cursor:not-allowed;\" class=\"game_card_play_button\">Unavaliable🔒</button>" : `<a href=\"Games/${gameData.id}/\"><button class=\"game_card_play_button\">Play</button></a>`}
-    </div>
-</div>`;
-
-    let node = document.createElement("div");
-    scrollingArea.appendChild(node);
-    node.className = "game_card_area";
-    node.innerHTML = newDocData;
-}
-
-
-let val = Math.floor(Math.random()*10);
-
-setTimeout(() => {
-    const adsImgs = document.getElementsByClassName("ad_img");
-    for(let i=0;i<adsImgs.length;i++){
-        adsImgs[i].src = `./Assets/Images/Ads/${(val+i)%11}.png`;
-    }
-}, 100);
-
 </script>
-
-<style>
-    body{
-    display: block;
-    justify-content: normal;
-    align-content: normal;
-    height:max-content;
-    margin: 0;
-    background-color: #1d1d1d;
-    background-size: 10px;
-    background-repeat: repeat;
-    overflow-y: scroll;
-    font-size:medium;
-    color: #ffffff;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    }
-    .ShowOnHoverOnly{
-        opacity: 0;
-    }
-    .ShowOnHoverOnly:hover{
-        opacity: 100%;
-    }
-
-    a:visited{color:rgb(0, 140, 255);}
-    a:link{color:rgb(66, 198, 255);}
-
-    #CanvasBg{
-        background: linear-gradient(#1d1d1d,#000000);
-        z-index: -1;
-        display: inline-block;
-        position: fixed;
-        left: 0px;
-        bottom: 0px;
-        width: 100%;
-        height: 60%;
-        object-fit: cover;
-    }
-
-    .FogstuffLogoContainer{
-        display: block;
-        width: 100%;
-    }
-
-    .FogstuffLogo{
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        width: 300px;
-    }
-
-    .main_div{
-        height: max-content;
-    }
-
-    .ad_a{
-        display: block;
-        height: max-content;
-        margin-top: 50px;
-    }
-
-    .center_area{
-        width: 100%;
-        height: fit-content;
-        display: inline-flex;
-    }
-    
-    #left_ad_area{
-        position: absolute;
-        width: 210px;
-        height: fit-content;
-    }
-
-    .game_card_area{
-        height: 180px;
-    }
-
-    #right_ad_area{
-        position: absolute;
-        right: 0px;
-        width: 210px;
-        height: max-content;
-    }
-
-    #large_main_games_area{
-        display: block;
-        width: 800px;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .ad_img{
-        top: 0px;
-        display: block;
-        width: 200px;
-        height: 540px;
-    }
-
-    button{
-        cursor: pointer;
-    }
-
-    .game_card_area_div{
-        border-radius: 5px;
-        display: flex;
-        width: 100%;
-        height: 140px;
-        padding-top: 10px;
-    }
-    
-    .game_card_area_child{
-        border-radius: 5px;
-        display: flex;
-        width: 100%;
-        height: 140px;
-    }
-    
-
-    .top_area{
-        background-color: #161617;
-    }
-
-    marquee{
-        background-color: rgb(15, 15, 15);
-        color: white;
-    }
-
-    .game_card_icon_img{
-        background-color: #ffffff;
-        height: calc(100% - 20px);
-        width:120px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 8px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .game_card_description_div{
-        display: block;
-    }
-
-    .game_card_description_text{
-        padding-top: 10px;
-        font-size: small;
-        height: calc(100% - 70px);
-    }
-
-    .game_card_description_title{
-        font-size: large;
-    }
-
-    .game_card_play_button{
-        border-radius: 2px;
-        border: none;
-        background-color: rgb(226, 226, 226);
-        color: rgb(0, 0, 0);
-        width: 120px;
-        position: relative;
-        left: 0px;
-        bottom: 0px;
-        font-family: 'Segoe UI', cursive, 'Comic Sans MS', Arial, Helvetica;
-        font-size: large;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .game_card_play_button:disabled{
-        background-color: rgb(66, 66, 66);
-        color: rgb(193, 193, 193);
-    }
-    
-    .game_card_play_button:hover{
-        background-color: rgb(138, 138, 138);
-    }
-
-    #top_area_buttons{
-        background-color: #161617;
-        display: flex;
-        position: relative;
-    }
-
-    #top_area_buttons button{
-        margin-bottom: 10px;
-    }
-
-
-    .game_card_icon_image_area{
-        align-items: center;
-        display: flex;
-        height: 100%;
-        width:140px;
-    }
-
-    #main_games_scrolling_area{
-        background-color: rgba(40,40,42,0.5);
-        width: 820px;
-        height: 100%;
-        display:block;
-        margin-left: auto;
-        margin-right: auto;       
-        z-index: 10; 
-        box-shadow: 0px 0px 40px #525252;
-        background-color: rgba(40,40,42, 0.3);
-        backdrop-filter: blur(10px);
-    }
-
-    .selectable_tab_button{
-        display: flex;
-        border-radius: 10px;
-        border: none;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color: rgb(29, 35, 57);
-        color: white;
-        height: 25px;
-        font-weight: bold;
-    }
-
-</style>
 
 </html>
