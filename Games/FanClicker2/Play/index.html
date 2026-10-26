@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+    This is the main file for Fan Clicker 2
+    A game by Fog
+    Copyright 2024 - 2026 -- All rights reserved
+    -->
+    <head>
+        <meta charset="utf-8">
+        <title>Fan Clicker</title>
+        <link rel="icon" href="./icon.png">
+    </head>
+    <body>
+        <audio id="AudioClick">
+            <source src="./Assets/Audios/click.webm" type="audio/webm">
+        </audio>
+        <noscript>
+            <h1><font color="red">Please enable JavaScript to proceed.</font></h1>
+        </noscript>
+        <div id="WindowTopBar">
+            <div id="TopBarFlex">
+               <p id="SpeedText">Speed: NaN</p>
+               <div id="NewsSection">
+                    <span>News:</span>
+                    <marquee id="Marquee" direction="left" scrollamount="4">
+                        <span>I like potatos</span>&bullet;
+                        <span>Elon Musk just bought FogStuff</span>&bullet;
+                        <span>Does anyone really read this?</span>&bullet;
+                        <span>UNINSTALL WINDOWS NOW!!! (linux propaganda)</span>&bullet;
+                        <span>Nah, jk, install Windows 98 it's good</span>&bullet;
+                        <span>Notch just sold Mojang to Microsoft for ${Infinity} dollars!</span>&bullet;
+                        <span>PHP security failure is making the world go crazy</span>&bullet;
+                        
+                    </marquee>
+               </div>
+            </div>
+        </div>
+        <main id="main">
+            <div id="LeftSidePanel">
+                <div id="LeftPanelContent">
+                    <div id="FanConteiner">
+                        <canvas id="FanCanvas2D" width="256" height="256">
+                            <font color="red"><b>Your web browser does not support HTML5 canvas.</b></font>
+                        </canvas>
+                        <button onclick="alert('Something failed to load. Check the logs.');" title="Fan: click to score points!" id="FanButton" style="z-index: 5;"><span hidden>Fan</span></button>
+                    </div>
+                </div>
+                <div id="SeparatorVertical">
+                </div>
+            </div>
+            <div id="MiddleCenterArea">
+                <div id="MiddleAreaConteiner">
+                    <div id="BuildingsArea">
+                        <div class="BuildsDiv">
+                            <div class="BuildsDivContent" id="BuildsDivContent">
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="RightSidePanel">
+                <div id="RightPanelContent">
+                    <div id="UpgradePanel">
+                        <span class="RightPanelTitleSpan">Upgrades</span>
+                        
+                    </div>
+                    <div id="ShopPanel">
+                        <span class="RightPanelTitleSpan">Shop</span>
+                        <div id="ShopContentDiv" style="overflow: scroll;">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="SeparatorVertical2">
+                </div>
+            </div>
+        </main>
+
+        <script defer type="module" src="./Scripts/Main.JS"></script>
+    </body>
+    <style>
+        body{
+            position: absolute;
+            display: block;
+            margin: 0px;
+            top: 0px;
+            margin-top: 0px;
+            margin-left: 0px;
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            cursor: pointer;
+        }
+        .RightPanelTitleSpan{
+            display: block;
+            -webkit-user-select: none; /* Safari */
+            user-select: none;
+            width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #UpgradePanel{
+            height: 120px;
+            border: solid;
+            border-color: black;
+            border-width: 1px;
+        }
+        #ShopPanel{
+            height: calc(100% - 120px);
+            margin-top: -1px;
+            border: solid;
+            border-color: black;
+            border-width: 1px;
+        }
+        #TopBarFlex{
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+        #SpeedText{
+            position: fixed;
+            display: flex;
+            left: 0px;
+            top: -20px;
+            height: 60%;
+            -webkit-user-select: none; /* Safari */
+            user-select: none;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        #FanCanvas2D{
+            display: inline-block;
+            position: absolute;
+            height: calc(100% - 50px);
+            margin-top: 0px;
+            width: 100%;
+            top: 0px;
+            background-image: url("./Assets/Sprites/Fan/Back.png");
+            background-repeat:no-repeat;
+            background-position: top;
+            background-size:contain;
+            image-rendering:pixelated;
+            object-fit: contain;
+        }
+        #FanConteiner{
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        #FanButton{
+            /*background-color: aqua;*/
+            background: transparent;
+            display: flexbox;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            border-radius: 100%;
+            color: rgba(0, 0, 0, 0);
+            border: none;
+            width: 400px;
+            height: 500px;
+            overflow:visible;
+        }
+        #FanFallbackConteiner{
+            display: none;
+            
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        .FanFallbackImage{
+            margin-left: 0px;
+        }
+        #FallbackImageLayer0{
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        #FallbackImageLayer1{
+            width: 65%;
+            position: absolute;
+            left: 0px;
+            margin-left: 16%;
+            margin-top: 7%;
+            transform: rotate(2deg);
+        }
+        #FallbackImageLayer2{
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        #WindowTopBar{
+            top: 0px;
+            margin-top: 0px;
+            width: 100%;
+            height: 50px;
+            background-image: url("./Assets/Sprites/DarkBg.png");
+        }
+        #LeftPanelContent{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #main{
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        #SeparatorVertical{
+            position: absolute;
+            right: 0px;
+            height: 100%;
+            width: 10px;
+            background-image: url("./Assets/Sprites/Separator.png");
+        }
+        #SeparatorVertical2{
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            top: 0px;
+            height: 100%;
+            width: 10px;
+            background-image: url("./Assets/Sprites/Separator.png");
+        }
+        #LeftSidePanel{
+            background-image: url("./Assets/Sprites/Backgrounds/1.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block !important;
+            position: relative;
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 30%;
+            height: 100%;
+        }
+        #RightSidePanel{
+            background-image: url("./Assets/Sprites/GrayBg.png");
+            background-repeat: repeat;
+            display: block;
+            position: relative;
+            margin-right: 0px;
+            margin-top: 0px;
+            width: 30%;
+            height: 100%;
+        }
+        #RightPanelContent{
+            margin-left: 10px;
+            width: calc(100% - 10px);
+            height: calc(100% - 50px);
+            overflow-y: scroll;
+        }
+        #MiddleCenterArea{
+            background-image: url("./Assets/Sprites/WhiteBg.png");
+            display: inline-block;
+            position: relative;
+            margin-top: 0px;
+            flex: 1;
+            height: 100%;
+        }
+        #MiddleAreaConteiner{
+            height: 100%;
+        }
+        #BuildingsArea{
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            position: absolute;
+            overflow-y: scroll;
+        }
+        .PurchaseButton1{
+            image-rendering: pixelated;
+            background-image: url("./Assets/Sprites/GUI/Button.png");
+            background-repeat: no-repeat;
+            background-position: 0px;
+            background-size: 100%;
+            height: 90px;
+            margin-top: 5px;
+            width:100%;
+            display: flex;
+            text-align: left;
+            font-family:Arial, Helvetica, sans-serif
+        }
+        .PurchaseButton1:active{
+            background-image: url("./Assets/Sprites/GUI/ButtonPressed.png");
+        }
+        .PurchaseButtonIcon{
+            width: 64px;
+        }
+        .BuildsDiv{
+            display: block;
+            background-image: url("./Assets/Sprites/GrayBg.png");
+            padding-top: 5px;
+            width: 100%;
+            height: 300px;
+        }
+        .BuildsDivContent{
+            display: inline-flex;
+            background-image: url("./Assets/Sprites/Backgrounds/area_computerfan.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: calc(100% - 10px);
+            height: 295px;
+            margin-left: 5px;
+            margin-top: 0px;
+        }
+        #Marquee{
+            background-color: red;
+            color: #ffffff;
+            height: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        #NewsSection{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 320px;
+        }
+        .PurchaseButtonPriceText{
+            color: goldenrod;
+        }
+        .PurchaseButton1s0{
+            display: inline;
+            width: 80px;
+            height: 80px;
+        }
+        .PurchaseButton1s1{
+            display: inline-block;
+        }
+        .PurchaseButtonPriceText{
+            font-weight: bold;
+            font-size: medium;
+            text-shadow: -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px  1px 0 #000,
+            1px  1px 0 #000;
+        }
+        .PurchaseButtonTitleText{
+            font-size: large;
+        }
+    </style>
+</html>
+<!-- I hope you have a great day :) -->

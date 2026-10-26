@@ -28,7 +28,7 @@ const url = "../../Assets/Templates/GamePage.html";
 const scriptUrl = "../../Assets/Templates/FullScreenScript.JS";
 const loadingScreen = document.getElementById("loading_area");
 
-const gameFrame = `<iframe width="100%" height="100%" allow="autoplay; encrypted-media" src="https://games.construct.net/46039/latest" frameborder="0" allowpaymentrequest="false" referrerpolicy="unsafe-url" sandbox="allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" scrolling="yes"></iframe>`;
+const gameFrame = `<iframe width="100%" height="100%" allow="autoplay; encrypted-media" src="https://games.construct.net/46039/v2" frameborder="0" allowpaymentrequest="false" referrerpolicy="unsafe-url" sandbox="allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" scrolling="yes"></iframe>`;
 
 async function requestServerFile(url) {
     try {
@@ -50,7 +50,7 @@ async function requestServerFile(url) {
 let pageRequest = requestServerFile(url);
 pageRequest.then((pageContent)=>{
     //console.log(pageContent);
-    let newPage = (pageContent.replace(/!_GAMENAME/g,"Pet's Fight [Classic]")).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
+    let newPage = (pageContent.replace(/!_GAMENAME/g,"Pet's FIGHT!")).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
     loadingScreen.remove();
     document.body.innerHTML = newPage;
     setTimeout(()=>{

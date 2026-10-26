@@ -5,17 +5,6 @@
         "description":"Good old Minecraft ported to JS by <a href=\"https://github.com/lax1dude\">Lax1dude</a>.<br>Supports version 1.5.2, 1.8 and 1.12.2<br>Only 1.8 and 1.5.2 supports multiplayer.<br>The original game can also be <strong>downloaded</strong> <a href=\"https://www.minecraft.net/pt-br\">here</a>"
     },
     {
-        "id":"FanClicker",
-        "display_name":"Fan Clicker",
-        "description":"Fan Clicker is a clicker game where your goal is to make the fan spin<br>as fast as possible. You can buy upgrades during your gameplay<br>The original game can also be <strong>played</strong> <a href=\"https://www.construct.net/en/free-online-games/fan-clicker-49213/play\">here</a>"
-    },
-    {
-        "id":"FanClicker2",
-        "display_name":"Fan Clicker 2",
-        "description":"🚧🔨Working in progress🏗️👀",
-        "disabled":true
-    },
-    {
         "id":"FrogGame",
         "display_name":"The Impossible Frog Game!",
         "description":"Frog Game is a rage-game platformer where you control a tiny little froggy<br><b>Supports local multiplayer!</b><br>Can you speedrun it?<br>The original game can be <strong>played</strong> <a href=\"https://www.construct.net/en/free-online-games/impossible-frog-game-63816/play\">here</a>"
@@ -23,8 +12,71 @@
     {
         "id":"Doom",
         "display_name":"Doom",
-        "description":"Classic Doom. <b>Not</b> emulated, recompiled to WASM.",
+        "description":"Kill demons lol",
         "disabled":false
+    },
+    {
+        "id":"FogsAdmin",
+        "display_name":"Fog's Admin",
+        "description":"idk how i will make a Roblox game run on the browser",
+        "disabled":true
+    },
+    {
+        "id":"FogsAdmin2",
+        "display_name":"Fog's Admin 2",
+        "description":"this one i might be able to port actually",
+        "disabled":true
+    },
+    {
+        "id":"FanClicker",
+        "display_name":"Fan Clicker",
+        "description":"(2023 first game) Fan Clicker is a clicker game where your goal is to make the fan spin<br>as fast as possible. You can buy upgrades during your gameplay<br>The original game can also be <strong>played</strong> <a href=\"https://www.construct.net/en/free-online-games/fan-clicker-49213/play\">here</a>"
+    },
+    {
+        "id":"FanClicker2",
+        "display_name":"Fan Clicker 2",
+        "description":"(2026 second game which is kinda of a remake but not quite)",
+        "disabled":true
+    },
+    {
+        "id":"Doors",
+        "display_name":"Michaelsoft Doors",
+        "description":"(2020 classic) The best OS ever!",
+        "disabled":false
+    },
+    {
+        "id":"DoorsRemake",
+        "display_name":"Michaelsoft Doors <i>remastered</i>",
+        "description":"(2026 remastered version)<br><img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+        "disabled":true
+    },
+    {
+        "id":"LittleWorld",
+        "display_name":"Little World!",
+        "description":"(2020 classic) Another classic by Fog.",
+        "disabled":false
+    },
+    {
+        "id":"LittleWorld2",
+        "display_name":"Little World 2!",
+        "description":"(second game from 2026)<br><img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+        "disabled":true
+    },
+    {
+        "id":"PetsFightClassic",
+        "display_name":"Pet's FIGHT!",
+        "description":"(2022 classic) <a href=\"https://www.construct.net/en/free-online-games/pets-fight-46039/play/v2\">alt link</a>"
+    },
+    {
+        "id":"PetsFight",
+        "display_name":"Pet's FIGHT! (2026 remake)",
+        "description":"Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!"
+    },
+    {
+        "id":"AiPlayground",
+        "display_name":"A<small>.</small>I<small>.</small> Playground",
+        "description":"play with AI. Please don't goon to ts 🥀",
+        "disabled":true
     },
     {
         "id":"N64Wasm",
@@ -34,7 +86,7 @@
     },
     {
         "id":"PlayJS",
-        "display_name":"Play!.js",
+        "display_name":"Play!.js <small>(PlayStation 2 emulator)</small>",
         "description":"Port of Play! to WASM and WebGL",
         "disabled":false
     },
@@ -75,6 +127,12 @@
         "disabled":true
     },
     {
+        "id":"OsakaSimulator",
+        "display_name":"Osaka Simulator",
+        "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+        "disabled":true
+    },
+    {
         "id":"GrannyShooter",
         "display_name":"Granny Shooter",
         "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
@@ -83,17 +141,13 @@
     {
         "id":"FogsPaint",
         "display_name":"Fog's Paint",
-        "description":"draw shi"
+        "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+        "disabled":true
     },
     {
         "id":"FireBoyAndWaterGirl",
         "display_name":"Fire Boy and Water Girl",
         "description":"CLASSIC FLASH GAEM"
-    },
-    {
-        "id":"PetsFight",
-        "display_name":"Pet's Fight",
-        "description":"Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!"
     },
     {
         "id":"GeometryDashLite",

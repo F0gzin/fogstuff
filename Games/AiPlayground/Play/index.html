@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="crappy AI waifu thingy idk">
+    <link href="./favicon.ico" rel="icon">
+    <title>A.I. Playground</title>
+</head>
+<body>
+    <div id="MainDiv">
+        <canvas width="640" height="480" id="Canvas"><font color="red" size="+2"><strong>Your browser does not support HTML5 canvas.</strong></font></canvas>
+    </div>
+    <div id="MainDivOverlay">
+        <div>
+            <span id="FpsCounter"></span>
+            <select>
+                <option value="ichika_nakano">💎 Ichika Nakano - Gotoubun no Hanayome</option>
+                <option value="nino_nakano">🦋 Nino Nakano - Gotoubun no Hanayome</option>
+                <option value="miku_nakano">🎧 Miku Nakano - Gotoubun no Hanayome</option>
+                <option value="yotsuba_nakano">🟩 Yotsuba Nakano - Gotoubun no Hanayome</option>
+                <option value="itsuki_nakano">⭐ Itsuki Nakano - Gotoubun no Hanayome</option>
+                <option value="natsuki">🧁 Natsuki - Doki Doki Literature Club!</option>
+                <option value="yuri">🔪 Yuri - Doki Doki Literature Club!</option>
+                <option value="monika">🖋️ Monika - Doki Doki Literature Club!</option>
+                <option value="sayori">💗 Sayori - Doki Doki Literature Club!</option>
+                <option value="tomoko_kuroki">😨 Tomoko Kuroki - Watamote</option>
+                <option value="ashley_graves">🩸 Ashley Graves - The Coffin of Andy and Leyley</option>
+                <option value="miku_hatsune">🎤 Miku Hatsune - Vocaloid</option>
+                <option value="nazuna_nanakusa">🦇 Nazuna Nanakusa - Yofukashi no Uta</option>
+                <option value="anko_uguisu">🚬 Anko Uguisu - Yofukashi no Uta</option>
+                <option value="crazy_mita">🔪 Crazy Mita - Miside</option>
+                <option value="cappie">🧢 Cappie Mita - Miside</option>
+                <!--
+                -->
+                
+            </select>
+        </div>
+        <div>
+            <span>AI model:</span>
+            <select>
+                <option value="auto">(auto)</option>
+                <option value="chatgpt">ChatGPT</option>
+                <option value="deepseek">DeepSeek</option>
+                <option value="grok">Grok</option>
+                <option value="llama">LLama</option>
+                <option value="gemini">Gemini</option>
+            </select>
+        </div>
+        <div id="AiDialog">
+            <div id="AiDialog2">
+                <div>[System] Talk to AI -- 0.0</div>
+                <div>[System] !!! Beta build !!!</div>
+            </div>
+        </div>
+        <div id="InputArea">
+            <input id="TextInput" placeholder="Talk to AI" type="text">
+            <button id="InputSendButton" title="Send">&RightArrow;</button>
+        </div>
+    </div>
+
+    <style>
+        body{
+            display: block;
+            background-color: #1c1d21;
+            width: 100%;
+            height: 100vh;
+            margin: 0px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{cursor: pointer;}
+        #FpsCounter{
+            position: absolute;
+            margin: 0px;
+            margin-top: 80px;
+            color: aliceblue;
+        }
+        #MainDiv{
+            position: absolute;
+            display: block;
+            overflow: hidden;
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        #MainDivOverlay{
+            pointer-events: none;
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        #MainDivOverlay *{
+            pointer-events: auto;
+        }
+        #Canvas{
+            background-color: black;
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 100%;
+            height: 100%;
+            /*
+            object-fit: contain;
+            */
+            position: absolute;
+            image-rendering: pixelated;
+        }
+        #InputArea{
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 30px;
+            bottom: 0px;
+        }
+        #TextInput{
+            background-color: rgba(0,2,12,0.5);
+            color: white;
+            border-width: 0px;
+            position: relative;
+            width: calc(100% - 60px);
+            height: 100%;
+            font-family: monospace;
+            font-size: large;
+        }
+        #InputSendButton{
+            position: relative;
+            margin-right: 0px;
+            right: 0px;
+            width: 60px;
+            height: 100%;
+        }
+        #ImageContainer{
+            width: 100%;
+            display: block;
+            position: absolute;
+            height: 60%;
+        }
+        #AiDialog{
+            pointer-events: none !important;
+            display: block;
+            position: absolute;
+            width: 40%;
+            height: calc(100% - 70px);
+            overflow: scroll;
+            direction: rtl;
+        }
+        #AiDialog2{
+            pointer-events: none !important;
+            direction: ltr;
+            width: 100%;
+            height: 100%;
+        }
+        #AiDialog2 div{
+            display: block;
+            direction: ltr;
+            text-align: left;
+            position: relative;
+            background-color: rgba(0,2,12,0.5);
+            margin: 3px;
+            left: 0px;
+            width: fit-content;
+            font-size: large;
+            font-family: monospace;
+        }
+    </style>
+    <script type="module" src="./Scripts/Main.js"></script>
+</body>
+</html>

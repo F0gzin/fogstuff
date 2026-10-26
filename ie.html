@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>document</title>
+</head>
+
+<body>
+Welcome to the World Wide Web!
+<div>
+    <button onclick="alert('hi!');" id="Button">Test 1</button>
+    <br>
+    <button id="Button">Test 2</button>
+</div>
+</body>
+
+<script type="application/javascript">
+    var button = document.getElementById("Button");
+    button.onclick = function(){
+        console.log(":P")
+        alert("Hello, World!");
+    }
+</script>
+
+</html>

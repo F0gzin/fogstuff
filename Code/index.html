@@ -60,16 +60,21 @@
                         </a>
                     </p>
                     <hr>
-                    <h3 id="Tutorials">Tutorials:</h3>
-                    My tutorials (<i>much better btw</i>)
+                    <h3 id="Tutorials">The basics of computing and programming:</h3>
+                    By me (<i>much better btw</i>)
                     <br>
                     <i>graphics programming tutorials comming soon..!</i>
                     <ul>
-                        <li><a href="./Basics">The basics of computing and programming</a></li>
-                        <li><a href="./Engines">What is an engine?</a></li>
+                        <li><a href="./Cpu">How does the proccessor (CPU) work?</a></li>
+                        <li><a href="./Binary">What's binary?</a></li>
                         <li><a href="./Lua">Lua programming language</a></li>
                         <li><a href="./C">C tutorials</a></li>
+                        <li><a href="./HowLanguagesWork">How do programming languages work?</a></li>
+                        <li><a href="./Engines">What is an engine?</a></li>
+                        <li><a href="./Os">Operating Systems</a></li>
+                        <li><a href="./Emulation">Emulation</a></li>
                         <li><a href="./Network">Networking & APIs</a></li>
+                        <li><a href="./Databases">Databases</a></li>
                         <li><a href="./Html">Web development: HTML and CSS</a></li>
                         <li><a href="./Js">JavaScript</a></li>
                         <li><a href="./Canvas2d">Canvas2D </a></li>
@@ -86,7 +91,7 @@
                     <i>Notice: No AI is here because <u>no AI is needed</u></i>
                     <ul>
                         <li><a href="https://notepad-plus-plus.org/">Notepad++</a></li>
-                        <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+                        <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> - <a href="https://vscode.dev/?vscode-lang=pt-pt">(web version)</a></li>
                         <li><a href="https://www.python.org/">Python</a></li>
                         <li><a href="https://sourceforge.net/projects/mingw/">MinGW - GNU utilities for Microsoft Windows &reg;</a></li>
                         <li><a href="https://www.virtualbox.org/">Oracle VirtualBox</a></li>
@@ -101,6 +106,7 @@
                         <li><a href="./Windows">Using Windows and PowerShell</a></li>
                         <li><font color="red">[WARNING: EVIL]</font> <a href="./Malware">Malware</a></li>
                         <li><font color="red">[WARNING: EVIL]</font> <a href="./Hacking">Hacking</a></li>
+						<li><a href="https://drive.google.com/drive/u/0/folders/1JSs3if-y0gXf1i6drVq_S-sDblYbVc4g">Some downloads... :)</a></li>
                     </ul>
                     <br>
                     <hr>
@@ -125,6 +131,10 @@
     Main{
         height: fit-content;
     }    
+    #BackgroundContainer{
+        top: 0px;
+        height: 100%;
+    }
 </style>
 
 <script type="text/javascript">
@@ -164,8 +174,13 @@ setInterval(() => {
             listOfWords[i] = new Word(); // im praying that the GC understands what i want it to do
         }
         
-        x.globalAlpha=1.0 - (word.y/500);
+        const d = (word.y+2)/300;
+        x.globalAlpha= 1.0 - (d > 1? 1 : d);
         word.y+=4;
+
+        if(Math.random()>=0.92){
+            word.text = word.text == "0" ? "1" : "0";
+        }
 
         x.font = `${Math.round(24/word.z)}px monospace`;
         x.fillText(word.text, (word.x / word.z) + c.width*0.5, (word.y / word.z) + c.height*0.5);

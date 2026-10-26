@@ -50,7 +50,7 @@ async function requestServerFile(url) {
 let pageRequest = requestServerFile(url);
 pageRequest.then((pageContent)=>{
     //console.log(pageContent);
-    let newPage = (pageContent.replace(/!_GAMENAME/g,"Pet's Fight")).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
+    let newPage = (pageContent.replace(/!_GAMENAME/g,"Pet's FIGHT! (remake)")).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
     loadingScreen.remove();
     document.body.innerHTML = newPage;
     setTimeout(()=>{
