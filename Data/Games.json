@@ -16,6 +16,11 @@
         "disabled":false
     },
     {
+        "id":"CS1.6",
+        "display_name":"Counter Strike 1.6",
+        "description":"it doesn't work 😭"
+    },
+    {
         "id":"FogsAdmin",
         "display_name":"Fog's Admin",
         "description":"idk how i will make a Roblox game run on the browser",
