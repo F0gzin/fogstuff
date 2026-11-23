@@ -5,11 +5,6 @@
         "description":"Good old Minecraft ported to JS by <a href=\"https://github.com/lax1dude\">Lax1dude</a>.<br>Supports version 1.5.2, 1.8 and 1.12.2<br>Only 1.8 and 1.5.2 supports multiplayer.<br>The original game can also be <strong>downloaded</strong> <a href=\"https://www.minecraft.net/pt-br\">here</a>"
     },
     {
-        "id":"FrogGame",
-        "display_name":"The Impossible Frog Game!",
-        "description":"Frog Game is a rage-game platformer where you control a tiny little froggy<br><b>Supports local multiplayer!</b><br>Can you speedrun it?<br>The original game can be <strong>played</strong> <a href=\"https://www.construct.net/en/free-online-games/impossible-frog-game-63816/play\">here</a>"
-    },
-    {
         "id":"Doom",
         "display_name":"Doom",
         "description":"Kill demons lol",
@@ -23,14 +18,19 @@
     {
         "id":"FogsAdmin",
         "display_name":"Fog's Admin",
-        "description":"idk how i will make a Roblox game run on the browser",
+        "description":"Truly a classic",
         "disabled":true
     },
     {
         "id":"FogsAdmin2",
         "display_name":"Fog's Admin 2",
-        "description":"this one i might be able to port actually",
+        "description":"this is only possible thanks to the Openblox project btw",
         "disabled":true
+    },
+    {
+        "id":"FrogGame",
+        "display_name":"The Impossible Frog Game!",
+        "description":"Frog Game is a rage-game platformer where you control a tiny little froggy<br><b>Supports local multiplayer!</b><br>Can you speedrun it?<br>The original game can be <strong>played</strong> <a href=\"https://www.construct.net/en/free-online-games/impossible-frog-game-63816/play\">here</a>"
     },
     {
         "id":"FanClicker",
@@ -76,6 +76,11 @@
         "id":"PetsFight",
         "display_name":"Pet's FIGHT! (2026 remake)",
         "description":"Minimal fight game. Choose popular meme animals, Floppa VS Bingus? Of course!"
+    },
+    {
+        "id":"Touhou8",
+        "display_name":"Touhou 8",
+        "description":"truly a classic (i never played it btw)"
     },
     {
         "id":"AiPlayground",
@@ -128,7 +133,7 @@
     {
         "id":"DDKK",
         "display_name":"Doki Doki Kombat Klub",
-        "description":"<a href=\"https://damiondamaske.itch.io/doki-doki-kombat-klub\">original game here</a><img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+        "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>I'm (trying) to port Ikemen-GO to WASM & WebGL1. <a href=\"https://damiondamaske.itch.io/doki-doki-kombat-klub\">original game here</a><br>",
         "disabled":true
     },
     {
@@ -177,9 +182,9 @@
         "description":"emulated with JS-DOS"
     },
     {
-        "id":"BirdGame",
-        "display_name":"Bird Game (by Fog)",
-        "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\">",
+        "id":"GTAVI",
+        "display_name":"Grand Theft Auto VI",
+        "description":"<img src=\"./Assets/Gifs/UnderConstruction.gif\"><br>I'm almost making it work... trust me. PS5 emulation in WASM gonna be fire 🔥",
         "disabled":true
     },
     {

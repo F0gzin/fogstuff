@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Google</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="icon" href="../Assets/google_favicon.ico">
+    <meta name="description" content="Web games, hopefully unblocked 👍">
+    <link rel="stylesheet" href="../Css/Main.css">
+</head>
+<body style="height: 100vh;">
+    <noscript id="NoScript">
+        <img src="../Assets/Images/Icons/report_x32.png" alt="&#9888;"><font color="red" size="+3"><b>!! JAVASCRIPT NOT ENABLED !!</b></font><img src="./Assets/Images/Icons/report_x32.png" alt="&#9888;"><br><b><i>Enable JavaScript in browser settings to proceed.</i></b> <br><button style="width:90px;cursor:pointer;"><a href="."><u><b>O</b></u>k</a></button>
+    </noscript>
+    
+    <div id="BackgroundContainer">
+        <canvas id="BackgroundCanvas" width="64" height="64"><font color="red">Your web browser does not support HTML5 canvas element.</font></canvas>
+    </div>
+    <div id="PrimaryContentDiv" style="height: 100%;">
+        <header id="PageHeader">
+            <center>
+                <a href="..">
+                    <img id="PageLogo" src="../Assets/Logo/White.svg" alt="FogStuff logo">
+                </a>
+            </center>
+            <marquee scrollamount="19">
+                <span>Unblocked web-games to waste time in school's computer lab instead of doing work...</span>
+            </marquee>
+        </header>
+        <nav id="NavigationSection"></nav>
+        <main id="Main" style="height: calc(100% - 60px);">
+            <div id="MainListSection">
+                <div id="ListScrollArea" style="height: calc(100% - 10px);">
+                    Nothing here... :&lpar;
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        FogStuff by Fog (@f0gzin on GitHub)<br>
+        <i>Background animation by <a href="https://www.dwitter.net/u/joeytwiddle">@joeytwiddle</a></i>
+    </footer>
+</body>
+
+<script type="text/javascript">
+const c = document.getElementById("BackgroundCanvas");
+const x = c.getContext("2d");
+let t = 0;
+let C = Math.cos;
+let S = Math.sin;
+setInterval(() => {
+    t+=0.1;
+    c.height = 500;
+    function _(){
+        x.fillStyle = "rgb(255,255,255)";
+        x.fillRect(
+        512+50*X/Z,
+        120*(5+S(2*Z-t)+C(X/5+t))/Z,
+
+        W=(6+F*6)/Z,
+        W)
+    }
+    for(i=c.width=1e3;i--;_())X=i%32-16,Z=i/256,F=(Z-1.5-C(t))**2,x.globalAlpha=.1/F
+}, 40);
+</script>
+
+</html>

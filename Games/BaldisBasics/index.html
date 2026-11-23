@@ -77,7 +77,7 @@ async function requestServerFile(url) {
 let pageRequest = requestServerFile(url);
 pageRequest.then((pageContent)=>{
     //console.log(pageContent);
-    let newPage = (pageContent.replace(/!_GAMENAME/g,"Baldi's Basics in Education and Learning [Classic]")).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
+    let newPage = (pageContent.replace(/!_GAMENAME/g,"BBIEAL launcher")).replace(/!_GAME_IFRAME_CONTENT/g,gameFrame)
     loadingScreen.remove();
     document.body.innerHTML = newPage;
     setTimeout(()=>{
